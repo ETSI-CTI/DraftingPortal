@@ -1,0 +1,21 @@
+.navbar-content.container-fluid
+  .navbar-header
+    button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar"
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    - if content_for?(:sidebar)
+      button.js-sidebar-toggle.sidebar-toggle.navbar-toggle type="button"
+        i.fa.fa-caret-left
+    a.navbar-brand href="#{root_path}"
+      h1.brand
+        | newapp
+  #navbar.navbar-collapse.collapse
+    ul.nav.navbar-nav.navbar-right
+      li.active
+        a href="#"
+          = t(".about")
+      li
+        a href="#"
+          = t(".contact")
+

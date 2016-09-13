@@ -1,0 +1,36 @@
+.wait-mask {
+  $spin-speed: .8s;
+  $spin-steps: 12;
+  $spinner-size: 32px;
+  $spinner-margin: -$spinner-size / 2;
+
+  display: none;
+
+  @include size(100% 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  z-index: 1000;
+  background: rgba(#000, .3);
+
+  &.active {
+    display: block;
+  }
+
+  .spinner {
+    @include size($spinner-size);
+    @include position(absolute, 50% null null 50%);
+    @include margin($spinner-margin null null $spinner-margin);
+
+    background: url('images/spinner.svg') 0 0 no-repeat;
+    image-rendering: -moz-crisp-edges;
+
+    @include animation(spin $spin-speed steps($spin-steps) infinite);
+  }
+
+  @include keyframes(spin) {
+    100% { transform: rotate(360deg); }
+  }
+}
+

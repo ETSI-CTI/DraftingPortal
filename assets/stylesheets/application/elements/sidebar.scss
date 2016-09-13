@@ -1,0 +1,57 @@
+aside.sidebar {
+  position: fixed;
+  width: $sidebar-width;
+  height: 100%;
+  top: 0;
+  left: -$sidebar-width;
+  z-index: 1000;
+  padding: $sidebar-padding-v 0;
+  opacity: 0.95;
+
+  background: $sidebar-bg;
+  color: $sidebar-text-color;
+
+  @include transition(all 0.3s ease);
+
+  &.active {
+    left: 0;
+    overflow-y: scroll;
+  }
+
+  header {
+    text-align: center;
+
+    .close-button {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 150%;
+      opacity: 1;
+      color: $brand-primary;
+      cursor: pointer;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li { list-style: none }
+  }
+}
+
+@media all and(min-width: $screen-sm-min) {
+  body > .wrapper {
+    @include display(flex);
+
+    aside.sidebar {
+      position: inherit;
+      z-index: inherit;
+      height: inherit;
+      opacity: 1;
+      left: 0;
+
+      padding: $sidebar-padding-top-sm 0 $sidebar-padding-v 0;
+    }
+  }
+}

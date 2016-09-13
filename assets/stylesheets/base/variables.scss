@@ -1,0 +1,48 @@
+/* Colors */
+$lynch: #6c7a89;
+$gray: gray;
+$blue: blue;
+$eucalyptus: #26a65b;
+$egg-colored: #ffa631;
+$sunset-orange: #f64747;
+
+
+$mint: #83d6de;
+
+/* Bootstrap overrides */
+$text-color: $lynch;
+
+$brand-primary: $blue;
+$brand-success: $eucalyptus;
+$brand-warning: $egg-colored;
+$brand-danger: $sunset-orange;
+$brand-info: lighten($blue, 30%);
+
+$state-info-text: darken($blue, 10%);
+$state-info-bg: lighten($gray, 15%);
+
+$state-danger-text: $brand-danger;
+$state-danger-bg: lighten($brand-danger, 30%);
+
+/* Layout and UI colors */
+$navbar-height: 90px;
+$navbar-padding: 10px;
+$navbar-padding-sm: 2em;
+$navbar-padding-lg: 5em;
+$navbar-bg: gray;
+$navbar-color: blue;
+
+$footer-height: $navbar-height;
+
+
+$sidebar-width: 280px;
+$sidebar-padding-top-sm: 50px;
+$sidebar-padding-v: 2em;
+
+$sidebar-bg: $mint;
+$sidebar-text-color: darken($state-info-text, 30%);
+
+$content-margin-top: 4em;
+$content-padding-bottom: 2em;
+$content-gutter-width: 35px;
+

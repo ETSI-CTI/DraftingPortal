@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title New application
+
+    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    meta charset="UTF-8"
+    /= favicon_link_tag "/assets/images/favicon.png"
+    = csrf_meta_tags
+
+    = stylesheet_link_tag  'application', media: 'all'
+    = yield :head
+
+  body class=[controller.controller_name, controller.action_name]
+    nav.navbar.navbar-inverse.navbar-static-top
+      = render "layouts/shared/navbar"
+
+    = yield :content
+
+    footer.footer
+      = render "layouts/shared/footer"
+
+    = render "layouts/shared/wait_mask"
+
+    = javascript_include_tag 'application'
+    = yield :scripts

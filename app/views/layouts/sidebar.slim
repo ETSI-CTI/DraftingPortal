@@ -1,0 +1,8 @@
+= content_for :content do
+  .wrapper
+    aside.sidebar
+     = yield :sidebar
+    .main.container
+      = yield
+
+= render template: "layouts/application"

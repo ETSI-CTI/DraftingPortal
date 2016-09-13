@@ -1,0 +1,30 @@
+body {
+  @include display(flex);
+  min-height: 100vh;
+  @include flex-direction(column);
+
+  > .main, > .wrapper {
+    @include flex(1);
+  }
+
+  > .main, > .wrapper > .main {
+    margin-top: $content-margin-top;
+    padding-bottom: $content-padding-bottom;
+  }
+
+  > .wrapper {
+    width: 100%;
+
+    > .main {
+      padding-left: $content-gutter-width;
+      padding-right: $content-gutter-width;
+    }
+  }
+
+  ul, li {
+    padding: 0;
+    margin: 0;
+  }
+
+  li { list-style: none; }
+}
