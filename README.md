@@ -1,4 +1,4 @@
-# cti-nwm-portal
+# rails5-gulp
 
 A Rails 5 application that integrates a gulp-based
 asset pipeline by including the final assets in Rails'
