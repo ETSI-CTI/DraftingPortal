@@ -38,6 +38,10 @@ gem 'simple_form'
 gem 'responders'
 # For easy configuration with a .env file
 gem 'dotenv-rails'
+# Use Postgres for production
+gem 'pg'
+# needed by Heroku
+gem 'rails_12factor'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -58,11 +62,6 @@ group :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'simplecov', require: false
-end
-
-group :production do
-  gem 'pg'
-  gem 'rails_12factor' # needed by Heroku
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
