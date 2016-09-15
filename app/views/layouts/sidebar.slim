@@ -1,7 +1,8 @@
 = content_for :content do
   .wrapper
     aside.sidebar
-     = yield :sidebar
+      i.close.fa.fa-close.visible-xs
+      = yield :sidebar
     .main.container
       = yield
 

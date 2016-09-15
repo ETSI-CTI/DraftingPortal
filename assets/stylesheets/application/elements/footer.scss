@@ -2,8 +2,8 @@ footer {
   width: 100%;
   min-height: $footer-height;
 
-  background-color: gray;
-  color: blue;
+  background-color: $footer-bg;
+  color: $footer-color;
 
   p {
     padding: 30px;

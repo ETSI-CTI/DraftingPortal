@@ -10,5 +10,5 @@ $(() => {
   };
 
   $('nav .js-sidebar-toggle').click(toggle);
-  $('aside.sidebar .js-close').click(toggle);
+  $('aside.sidebar .close').click(toggle);
 });

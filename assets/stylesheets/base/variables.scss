@@ -1,6 +1,6 @@
 /* Colors */
 $lynch: #6c7a89;
-$gray: gray;
+$gray: #c6cbcc;
 $blue: blue;
 $eucalyptus: #26a65b;
 $egg-colored: #ffa631;
@@ -29,20 +29,21 @@ $navbar-height: 90px;
 $navbar-padding: 10px;
 $navbar-padding-sm: 2em;
 $navbar-padding-lg: 5em;
-$navbar-bg: gray;
-$navbar-color: blue;
+$navbar-bg: $gray;
+$navbar-color: $blue;
 
 $footer-height: $navbar-height;
-
+$footer-bg: $navbar-bg;
+$footer-color: $navbar-color;
 
 $sidebar-width: 280px;
 $sidebar-padding-top-sm: 50px;
 $sidebar-padding-v: 2em;
 
-$sidebar-bg: $mint;
+$sidebar-bg: lighten($mint, 10%);
 $sidebar-text-color: darken($state-info-text, 30%);
 
-$content-margin-top: 4em;
+$content-padding-top: 4em;
 $content-padding-bottom: 2em;
 $content-gutter-width: 35px;
 

@@ -6,7 +6,7 @@ aside.sidebar {
   left: -$sidebar-width;
   z-index: 1000;
   padding: $sidebar-padding-v 0;
-  opacity: 0.95;
+  opacity: 0.8;
 
   background: $sidebar-bg;
   color: $sidebar-text-color;
@@ -18,18 +18,14 @@ aside.sidebar {
     overflow-y: scroll;
   }
 
-  header {
-    text-align: center;
-
-    .close-button {
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      font-size: 150%;
-      opacity: 1;
-      color: $brand-primary;
-      cursor: pointer;
-    }
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 150%;
+    opacity: 1;
+    color: $brand-primary;
+    cursor: pointer;
   }
 
   ul {
