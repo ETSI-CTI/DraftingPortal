@@ -1,24 +1,28 @@
 /* Colors */
+$etsi-blue: #007dc3;
+$etsi-green: rgba(123, 178, 56, 1);
 $lynch: #6c7a89;
-$gray: #c6cbcc;
-$blue: blue;
+$gray: #848d93;
+$porcelain: #ecf0f1;
+
+$gossip: #87d37c;
 $eucalyptus: #26a65b;
 $egg-colored: #ffa631;
 $sunset-orange: #f64747;
 
-
-$mint: #83d6de;
+$madison: #2c3e50;
 
 /* Bootstrap overrides */
 $text-color: $lynch;
 
-$brand-primary: $blue;
-$brand-success: $eucalyptus;
+$brand-primary: $etsi-blue;
+$brand-primary-light: lighten($brand-primary, 20%);
+$brand-info: $etsi-green;
+$brand-success: $gossip;
 $brand-warning: $egg-colored;
 $brand-danger: $sunset-orange;
-$brand-info: lighten($blue, 30%);
 
-$state-info-text: darken($blue, 10%);
+$state-info-text: darken($etsi-blue, 10%);
 $state-info-bg: lighten($gray, 15%);
 
 $state-danger-text: $brand-danger;
@@ -30,7 +34,8 @@ $navbar-padding: 10px;
 $navbar-padding-sm: 2em;
 $navbar-padding-lg: 5em;
 $navbar-bg: $gray;
-$navbar-color: $blue;
+$navbar-color: $porcelain;
+$navbar-brand-color: $brand-primary-light;
 
 $footer-height: $navbar-height;
 $footer-bg: $navbar-bg;
@@ -40,10 +45,10 @@ $sidebar-width: 280px;
 $sidebar-padding-top-sm: 50px;
 $sidebar-padding-v: 2em;
 
-$sidebar-bg: lighten($mint, 10%);
-$sidebar-text-color: darken($state-info-text, 30%);
+$sidebar-bg: $madison;
+$sidebar-text-color: $navbar-color;
 
-$content-padding-top: 4em;
+$content-padding-top: 1em;
 $content-padding-bottom: 2em;
 $content-gutter-width: 35px;
 

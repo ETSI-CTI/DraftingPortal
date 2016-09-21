@@ -6,7 +6,7 @@ aside.sidebar {
   left: -$sidebar-width;
   z-index: 1000;
   padding: $sidebar-padding-v 0;
-  opacity: 0.8;
+  opacity: 0.9;
 
   background: $sidebar-bg;
   color: $sidebar-text-color;
@@ -26,6 +26,7 @@ aside.sidebar {
     opacity: 1;
     color: $brand-primary;
     cursor: pointer;
+    text-shadow: none;
   }
 
   ul {
@@ -41,13 +42,17 @@ aside.sidebar {
     @include display(flex);
 
     aside.sidebar {
-      position: inherit;
+      position: relative;
       z-index: inherit;
       height: inherit;
       opacity: 1;
       left: 0;
 
       padding: $sidebar-padding-top-sm 0 $sidebar-padding-v 0;
+
+      .close {
+        display: none;
+      }
     }
   }
 }

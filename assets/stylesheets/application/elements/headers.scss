@@ -1,0 +1,39 @@
+header {
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+
+  .actions {
+    $btn-padding: 1em 2em;
+    $btn-margin: 1em;
+
+    @include display(flex);
+    @include flex-wrap(wrap);
+    @include justify-content(space-around);
+
+    .btn {
+      width: 100%;
+      padding: $btn-padding;
+      margin: $btn-margin;
+      text-transform: uppercase;
+
+      font-size: .75em;
+
+      .fa {
+        padding-right: 3px;
+      }
+    }
+  }
+
+  @media all and(min-width: $screen-sm-min) {
+    .actions {
+      .btn {
+        font-size: 1em;
+        width: inherit;
+      }
+    }
+  }
+}

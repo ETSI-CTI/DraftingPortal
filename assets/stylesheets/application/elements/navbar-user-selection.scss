@@ -1,0 +1,25 @@
+nav.navbar-static-top .nav.navbar-nav .user-selection {
+  $menu-padding: 10px 0;
+  $menu-padding-md: 15px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .dropdown-menu {
+    > li > a {
+      padding: $menu-padding;
+      color: inherit;
+    }
+  }
+
+  @media all and(min-width: $screen-md-min) {
+    .dropdown-menu {
+      > li > a {
+        color: $text-color;
+        padding: $menu-padding-md;
+      }
+    }
+  }
+}
+

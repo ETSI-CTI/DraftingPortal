@@ -1,1 +1,20 @@
+@import "fonts/bitter";
+@import "fonts/mavenpro";
+@import "fonts/oxygen";
+@import "fonts/ptsans";
+@import "fonts/roboto";
+@import "fonts/vollkorn";
+
 $fa-font-path: "/assets/fonts";
+
+body {
+  font-family: Oxygen;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: PT Sans;
+}
+
+table, .table {
+  font-family: Roboto;
+}

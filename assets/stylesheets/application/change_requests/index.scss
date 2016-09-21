@@ -1,0 +1,31 @@
+.change_requests.index {
+  .sidebar {
+    @include display(flex);
+
+    .showcase {
+      @include flex(1);
+      @include align-self(center);
+      text-align: center;
+      font-size: 3em;
+    }
+  }
+
+  .change-requests {
+    .icons,
+    .id,
+    .updated-at,
+    .contributed-at {
+      display: none;
+    }
+
+    @media all and(min-width: $screen-sm-min) {
+      .icons,
+      .id,
+      .updated-at,
+      .contributed-at {
+        display: table-cell;
+      }
+    }
+  }
+}
+

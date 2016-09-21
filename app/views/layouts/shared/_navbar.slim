@@ -9,7 +9,8 @@
         i.fa.fa-caret-left
     a.navbar-brand href="#{root_path}"
       h1.brand
-        | newapp
+        span.primary ETSI
+        span.secondary NWM Portal
   #navbar.navbar-collapse.collapse
     ul.nav.navbar-nav.navbar-right
       li.active
@@ -18,4 +19,6 @@
       li
         a href="#"
           = t(".contact")
+      li
+        = render "layouts/shared/navbar_user_selection"
 

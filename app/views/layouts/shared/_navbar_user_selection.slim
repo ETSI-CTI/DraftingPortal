@@ -1,0 +1,9 @@
+.user-selection.dropdown
+  a.logout.dropdown-toggle href="#" data-toggle="dropdown"
+    i.fa.fa-power-off
+    span.user= current_user&.full_name
+  ul.dropdown-menu
+    = render partial: "/shared/user_list_item",
+      collection: all_users(except: current_user),
+      as: "user"
+

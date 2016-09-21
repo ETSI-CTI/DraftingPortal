@@ -1,0 +1,9 @@
+= content_for :sidebar do
+  .showcase Sidebar
+
+section.workspace
+  header
+    = render "/change_requests/index/header"
+
+  section.change-requests
+    = render "/change_requests/index/table"

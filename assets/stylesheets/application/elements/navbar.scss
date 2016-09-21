@@ -21,25 +21,46 @@ nav.navbar-static-top {
   }
 
   .navbar-header {
-    $brand-padding: 35px;
+    $brand-padding: 25px 15px;
 
     position: relative;
 
-    @media all and(max-width: $screen-sm-max) {
-      min-height: $navbar-height - 10px;
-
-      .navbar-brand .brand div:last-child {
-        padding-left: $brand-padding;
-      }
-    }
-
     .navbar-brand {
       //background: url('/assets/images/logo.png') no-repeat;
+      padding: $brand-padding;
 
       .brand {
-        margin: 0 0 0 70px;
-        font-size: 22px;
+        margin: 0;
+
+        font-family: PT Sans;
+        font-style: italic;
         color: $navbar-color;
+
+        .primary {
+          display: none;
+        }
+
+        .secondary {
+          font-family: Oxygen;
+          font-style: normal;
+          font-size: .5em;
+        }
+      }
+
+      @media all and(min-width: $screen-md-min) {
+        .brand {
+          margin: 0 0 0 70px;
+
+          .primary {
+            display: inline;
+            color: $navbar-brand-color;
+          }
+
+          .secondary {
+            padding-left: 10px;
+            font-size: 70%;
+          }
+        }
       }
     }
   }
@@ -48,19 +69,43 @@ nav.navbar-static-top {
     $border-height: 7px;
     $selected-border: $border-height solid black;
     $hover-border: $border-height solid white;
+    $menu-item-padding: 15px;
+    $menu-item-padding-md: 35px 15px;
 
+    color: $navbar-color;
+
+    > li > * {
+      padding: $menu-item-padding;
+    }
+
+    .open > a {
+      background: inherit;
+    }
 
     a {
       line-height: $link-height;
       color: $navbar-color;
+      font-family: MavenPro;
 
       &:hover {
         color: lighten($navbar-color, 10%);
+      }
+
+      &.logout {
+        .fa {
+          padding-right: 3px;
+        }
       }
     }
 
     & > .active a {
       background-color: inherit;
+    }
+
+    @media all and(min-width: $screen-md-min) {
+      > li > * {
+        padding: $menu-item-padding-md;
+      }
     }
   }
 }

@@ -5,4 +5,12 @@ module ApplicationHelper
     "/assets/#{path}"
   end
 
+  def current_user
+    controller.current_user
+  end
+
+  def all_users(except: nil)
+    UserService.new.all_users(except: except)
+  end
+
 end
