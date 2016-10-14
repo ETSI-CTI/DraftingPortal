@@ -119,7 +119,11 @@ class ChangeRequestService
   end
 
   def find_by_user(user)
-    CHANGE_REQUESTS.select { |cr| cr.user.id == user.id }
+    CHANGE_REQUESTS.select { |cr| cr.user.id == user.id }.tap do |result|
+      def result.group(key)
+        group_by { |cr| cr.status }
+      end
+    end
   end
 
 end

@@ -1,0 +1,5 @@
+section class="#{status}"
+  h3= status
+  = render partial: "/change_requests/index/tile",
+    collection: change_requests,
+    as: "change_request"
