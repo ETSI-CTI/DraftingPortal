@@ -1,5 +1,9 @@
-section class="#{status}"
-  h3= status
+section class="tiles #{status}"
+  .tile-status
+    h3
+      span= status
+      i.fa.fa-caret-up
+
   = render partial: "/change_requests/index/tile",
     collection: change_requests,
     as: "change_request"

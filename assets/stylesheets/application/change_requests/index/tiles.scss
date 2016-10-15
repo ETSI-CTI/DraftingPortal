@@ -1,0 +1,24 @@
+.tiles {
+
+  .tile-status {
+    span {
+      font-size: 1em;
+      text-transform: uppercase;
+    }
+  }
+
+}
+
+.tile {
+  $tile-bg: #f6f6f6;
+  $tile-header-bg: $porcelain;
+  $tile-header-color: $text-color;
+
+  font-family: Roboto;
+  background: $tile-bg;
+
+  header {
+    background: $tile-header-bg;
+    color: $tile-header-color;
+  }
+}

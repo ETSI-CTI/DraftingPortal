@@ -1,7 +1,9 @@
 .tile
-  .id= change_request.id
-  .specification= change_request.specification
-  .author= change_request.author.full_name
-  .status= change_request.status
-  .updated-at= change_request.updated_at
-  .contributed-at= change_request.contributed_at
+  header
+    .id= change_request.id
+    .specification= change_request.specification
+  .tile-body
+    .author= change_request.author.full_name
+    .status= change_request.status
+    .updated-at= change_request.updated_at
+    .contributed-at= change_request.contributed_at
