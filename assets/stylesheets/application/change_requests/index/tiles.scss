@@ -1,3 +1,5 @@
+@import "tile";
+
 .tiles {
 
   .tile-status {
@@ -5,20 +7,30 @@
       font-size: 1em;
       text-transform: uppercase;
     }
+
+    .toggle:before {
+      content: "\f0d7";
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: lighten($text-color, 15%);
+    }
+  }
+
+  .tile {
+    display: none;
+  }
+
+  &.active {
+    .tile-status .toggle:before {
+      content: "\f0d8";
+    }
+
+    .tile {
+      display: block;
+    }
   }
 
 }
 
-.tile {
-  $tile-bg: #f6f6f6;
-  $tile-header-bg: $porcelain;
-  $tile-header-color: $text-color;
-
-  font-family: Roboto;
-  background: $tile-bg;
-
-  header {
-    background: $tile-header-bg;
-    color: $tile-header-color;
-  }
-}

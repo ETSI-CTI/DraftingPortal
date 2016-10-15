@@ -1,9 +1,11 @@
 .tile
   header
-    .id= change_request.id
-    .specification= change_request.specification
+    = render partial: "/change_requests/index/tile_header",
+      locals: { change_request: change_request }
   .tile-body
-    .author= change_request.author.full_name
-    .status= change_request.status
-    .updated-at= change_request.updated_at
-    .contributed-at= change_request.contributed_at
+    = render partial: "/change_requests/index/tile_body",
+      locals: { change_request: change_request }
+  .tile-actions
+    = render partial: "/change_requests/index/tile_actions",
+      locals: { change_request: change_request }
+

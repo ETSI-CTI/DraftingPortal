@@ -1,8 +1,8 @@
-section class="tiles #{status}"
+section class="tiles active #{status}"
   .tile-status
     h3
       span= status
-      i.fa.fa-caret-up
+      i.toggle.fa
 
   = render partial: "/change_requests/index/tile",
     collection: change_requests,

@@ -1,0 +1,29 @@
+.tile {
+
+  @mixin two-column-flex {
+    @include display(flex);
+    @include flex-flow(row wrap);
+
+    > div {
+      @include flex(1);
+    }
+  }
+
+  $tile-bg: #f6f6f6;
+
+  $tile-header-bg: $sidebar-bg;
+  $tile-header-color: $porcelain;
+  $tile-header-padding: 1em;
+
+  $tile-body-padding: 1em;
+
+  $tile-actions-padding: 1em 2em;
+
+  @import "tile-header";
+  @import "tile-body";
+  @import "tile-actions";
+
+  font-family: Roboto;
+  background: $tile-bg;
+
+}
