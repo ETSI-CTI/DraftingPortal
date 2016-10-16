@@ -16,6 +16,10 @@
   $tile-header-padding: 1em;
 
   $tile-body-padding: 1em;
+  $details-dl-padding: .5em;
+  $details-dt-bg: $gray;
+  $details-dt-color: $porcelain;
+  $details-dd-bg: white;
 
   $tile-actions-padding: 1em 2em;
 
@@ -25,5 +29,6 @@
 
   font-family: Roboto;
   background: $tile-bg;
+  margin: 2em 0;
 
 }
