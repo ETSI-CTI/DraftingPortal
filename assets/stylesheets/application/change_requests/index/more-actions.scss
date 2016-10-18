@@ -1,0 +1,48 @@
+.more-actions {
+  background: $tile-more-actions-bg;
+  padding: $tile-more-actions-padding;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  .action-set {
+    text-align: center;
+    padding: 1em;
+
+    +.action-set {
+      border-top: 1px solid $gray;
+    }
+  }
+
+  li {
+    padding: .5em;
+  }
+
+  dl {
+    margin: .5em;
+
+    @include column-flex;
+    @include justify-content(center);
+
+    > dl, dt {
+      @include align-self(center);
+    }
+  }
+
+  @media all and(min-width: $screen-sm-min) {
+    &.active {
+      @include column-flex;
+    }
+
+    .action-set {
+      @include flex(1);
+      @include align-self(center);
+
+      +.action-set {
+        border-top: 0;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-.tile-body {
+.body {
 
   padding: $tile-body-padding;
 
@@ -19,8 +19,7 @@
 
 
   @media all and(min-width: $screen-sm-min) {
-    @include display(flex);
-    @include flex-flow(row wrap);
+    @include column-flex
     @include justify-content(space-between);
 
     .details {

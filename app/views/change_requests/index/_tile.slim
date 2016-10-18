@@ -2,10 +2,14 @@
   header
     = render partial: "/change_requests/index/tile_header",
       locals: { change_request: change_request }
-  .tile-body
+  .body
     = render partial: "/change_requests/index/tile_body",
       locals: { change_request: change_request }
-  .tile-actions
+  .actions
     = render partial: "/change_requests/index/tile_actions",
       locals: { change_request: change_request }
+  .more-actions
+    = render partial: "/change_requests/index/more_actions",
+      locals: { change_request: change_request }
+
 

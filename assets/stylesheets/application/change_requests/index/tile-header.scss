@@ -6,7 +6,7 @@ header {
   font-size: 1.25em;
 
   @media all and(min-width: $screen-sm-min) {
-    @include two-column-flex;
+    @include column-flex;
 
     > div { @include flex(1); }
 

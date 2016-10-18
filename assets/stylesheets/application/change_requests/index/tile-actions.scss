@@ -1,4 +1,4 @@
-.tile-actions {
+.actions {
   padding: $tile-actions-padding;
 
   .primary {
@@ -23,7 +23,7 @@
   }
 
   @media all and(min-width: $screen-sm-min) {
-    @include two-column-flex;
+    @include column-flex;
 
     .primary {
       text-align: left;

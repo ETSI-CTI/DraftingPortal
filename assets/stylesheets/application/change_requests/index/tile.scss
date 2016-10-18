@@ -1,6 +1,6 @@
 .tile {
 
-  @mixin two-column-flex {
+  @mixin column-flex {
     @include display(flex);
     @include flex-flow(row wrap);
   }
@@ -13,15 +13,18 @@
 
   $tile-body-padding: 1em;
   $details-dl-padding: .5em;
-  $details-dt-bg: $gray;
-  $details-dt-color: $porcelain;
-  $details-dd-bg: white;
+  $details-dt-bg: darken($porcelain, 5%);
+  $details-dt-color: inherit;
+  $details-dd-bg: inherit;
 
   $tile-actions-padding: 1em 2em;
+  $tile-more-actions-bg: darken($porcelain, 10%);
+  $tile-more-actions-padding: 1.5em 1em;
 
   @import "tile-header";
   @import "tile-body";
   @import "tile-actions";
+  @import "more-actions";
 
   font-family: Roboto;
   background: $tile-bg;
