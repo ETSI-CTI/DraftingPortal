@@ -1,0 +1,11 @@
+.tile
+  header
+    = render partial: "/change_requests/index/tile_header",
+      locals: { change_request: change_request }
+  .tile-body
+    = render partial: "/change_requests/index/tile_body",
+      locals: { change_request: change_request }
+  .tile-actions
+    = render partial: "/change_requests/index/tile_actions",
+      locals: { change_request: change_request }
+

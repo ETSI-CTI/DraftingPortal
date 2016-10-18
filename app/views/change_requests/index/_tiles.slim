@@ -1,0 +1,3 @@
+- @change_requests.group(:status).each do |(status, crs)|
+  = render partial: "/change_requests/index/tile_section",
+    locals: { status: status, change_requests: crs }

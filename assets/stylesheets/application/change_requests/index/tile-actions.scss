@@ -1,0 +1,33 @@
+.tile-actions {
+  padding: $tile-actions-padding;
+
+  .primary {
+    .btn {
+      width: 12em;
+      margin: 1em;
+    }
+
+    text-align: center;
+    @include flex-wrap(nowrap);
+  }
+
+  .secondary {
+    text-align: right;
+    @include align-self(flex-end);
+    white-space: nowrap;
+
+    a {
+      display: block;
+      margin-top: 1em;
+    }
+  }
+
+  @media all and(min-width: $screen-sm-min) {
+    @include two-column-flex;
+
+    .primary {
+      text-align: left;
+      @include flex(3);
+    }
+  }
+}

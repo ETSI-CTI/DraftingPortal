@@ -6,6 +6,7 @@ class ChangeRequest
     user
     author
     specification
+    title
     status
     updated_at
     contributed_at

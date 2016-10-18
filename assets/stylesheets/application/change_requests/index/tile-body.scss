@@ -1,0 +1,31 @@
+.tile-body {
+
+  padding: $tile-body-padding;
+
+  .details {
+    dt, dd {
+      padding: $details-dl-padding;
+    }
+
+    dt {
+      background: $details-dt-bg;
+      color: $details-dt-color;
+    }
+
+    dd {
+      background: $details-dd-bg;
+    }
+  }
+
+
+  @media all and(min-width: $screen-sm-min) {
+    @include display(flex);
+    @include flex-flow(row wrap);
+    @include justify-content(space-between);
+
+    .details {
+      margin: 1em;
+      @include flex-basis(300px);
+    }
+  }
+}

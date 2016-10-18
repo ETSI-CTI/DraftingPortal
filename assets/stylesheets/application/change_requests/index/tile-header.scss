@@ -1,0 +1,15 @@
+header {
+  background: $tile-header-bg;
+  color: $tile-header-color;
+  padding: $tile-header-padding;
+
+  font-size: 1.25em;
+
+  @media all and(min-width: $screen-sm-min) {
+    @include two-column-flex;
+
+    > div { @include flex(1); }
+
+    .title { text-align: right; }
+  }
+}

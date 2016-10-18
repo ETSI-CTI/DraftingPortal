@@ -1,0 +1,9 @@
+section class="tiles active #{status}"
+  .tile-status
+    h1
+      span= status
+      i.toggle.fa
+
+  = render partial: "/change_requests/index/tile",
+    collection: change_requests,
+    as: "change_request"

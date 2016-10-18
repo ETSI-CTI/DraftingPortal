@@ -1,0 +1,43 @@
+@import "tile";
+
+.tiles {
+
+  .tile-status {
+    margin: 2em 0;
+
+    span {
+      font-size: .8em;
+      text-transform: uppercase;
+    }
+
+    .toggle:before {
+      content: "\f0d7";
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: lighten($text-color, 15%);
+    }
+  }
+
+  .tile {
+    display: none;
+  }
+
+  &.active {
+    .tile-status .toggle:before {
+      content: "\f0d8";
+    }
+
+    .tile {
+      display: block;
+    }
+  }
+
+  @media all and(min-width: $screen-sm-min) {
+    .tile-status {
+      letter-spacing: 15px;
+    }
+  }
+}
+
