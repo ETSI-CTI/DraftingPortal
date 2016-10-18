@@ -3,16 +3,13 @@ header {
   color: $tile-header-color;
   padding: $tile-header-padding;
 
-  .specification {
-    font-size: 1.25em;
-  }
-
-  .author {
-    text-align: right;
-    color: darken($tile-header-color, 25%);
-  }
+  font-size: 1.25em;
 
   @media all and(min-width: $screen-sm-min) {
     @include two-column-flex;
+
+    > div { @include flex(1); }
+
+    .title { text-align: right; }
   }
 }

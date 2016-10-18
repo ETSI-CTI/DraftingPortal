@@ -3,10 +3,6 @@
   @mixin two-column-flex {
     @include display(flex);
     @include flex-flow(row wrap);
-
-    > div {
-      @include flex(1);
-    }
   }
 
   $tile-bg: #f6f6f6;

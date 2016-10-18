@@ -13,7 +13,8 @@ class ChangeRequestService
         id: 1,
         user: john_smith,
         author: john_smith,
-        specification: "TS XXX YYY",
+        specification: "TS 119 612",
+        title: "Trusted Lists",
         status: :accepted,
         updated_at: Date.new(2015, 1, 1),
         contributed_at: Date.new(2015, 2, 1)
@@ -22,7 +23,8 @@ class ChangeRequestService
         id: 2,
         user: john_smith,
         author: john_smith,
-        specification: "TS XXX YYY",
+        specification: "TS 119 132",
+        title: "XAdES digital signatures; Part 2: Extended XAdES signatures",
         status: :contributed,
         updated_at: Date.new(2016, 5, 12),
         contributed_at: Date.new(2016, 5, 12)
@@ -31,7 +33,8 @@ class ChangeRequestService
         id: 3,
         user: john_smith,
         author: bill_gates,
-        specification: "TS XXX YYY",
+        specification: "TS 119 122",
+        title: "CAdES digital signatures; Part 2: Extended CAdES signatures",
         status: :drafting,
         updated_at: Date.new(2016, 5, 12)
       },
@@ -40,7 +43,8 @@ class ChangeRequestService
         id: 4,
         user: bill_gates,
         author: john_smith,
-        specification: "TS XXX YYY",
+        specification: "TS 119 612",
+        title: "Trusted Lists",
         status: :accepted,
         updated_at: Date.new(2015, 1, 1),
         contributed_at: Date.new(2015, 2, 1)
@@ -49,7 +53,8 @@ class ChangeRequestService
         id: 5,
         user: bill_gates,
         author: john_smith,
-        specification: "TS XXX YYY",
+        specification: "TS 119 132",
+        title: "XAdES digital signatures; Part 2: Extended XAdES signatures",
         status: :contributed,
         updated_at: Date.new(2016, 5, 12),
         contributed_at: Date.new(2016, 5, 12)
@@ -58,7 +63,8 @@ class ChangeRequestService
         id: 6,
         user: bill_gates,
         author: bill_gates,
-        specification: "TS XXX YYY",
+        specification: "TS 119 122",
+        title: "CAdES digital signatures; Part 2: Extended CAdES signatures",
         status: :drafting,
         updated_at: Date.new(2016, 5, 12)
       },
@@ -67,7 +73,8 @@ class ChangeRequestService
         id: 7,
         user: larry_page,
         author: john_smith,
-        specification: "TS XXX YYY",
+        specification: "TS 119 612",
+        title: "Trusted Lists",
         status: :implemented,
         updated_at: Date.new(2015, 1, 1),
         contributed_at: Date.new(2015, 2, 1)
@@ -76,7 +83,8 @@ class ChangeRequestService
         id: 8,
         user: larry_page,
         author: john_smith,
-        specification: "TS XXX YYY",
+        specification: "TS 119 132",
+        title: "XAdES digital signatures; Part 2: Extended XAdES signatures",
         status: :accepted,
         updated_at: Date.new(2016, 5, 12),
         contributed_at: Date.new(2016, 5, 12)
@@ -85,7 +93,8 @@ class ChangeRequestService
         id: 9,
         user: larry_page,
         author: larry_page,
-        specification: "TS XXX YYY",
+        specification: "TS 103 174",
+        title: "ASiC Baseline Profile",
         status: :drafting,
         updated_at: Date.new(2016, 5, 12)
       },
@@ -94,7 +103,8 @@ class ChangeRequestService
         id: 10,
         user: tb_official,
         author: john_smith,
-        specification: "TS XXX YYY",
+        specification: "TS 119 612",
+        title: "Trusted Lists",
         status: :contributed,
         updated_at: Date.new(2015, 1, 1),
         contributed_at: Date.new(2015, 2, 1)
@@ -103,7 +113,8 @@ class ChangeRequestService
         id: 11,
         user: tb_official,
         author: john_smith,
-        specification: "TS XXX YYY",
+        specification: "TS 119 122",
+        title: "CAdES digital signatures; Part 2: Extended CAdES signatures",
         status: :drafting,
         updated_at: Date.new(2016, 5, 12),
       },
@@ -111,7 +122,8 @@ class ChangeRequestService
         id: 12,
         user: tb_official,
         author: larry_page,
-        specification: "TS XXX YYY",
+        specification: "TS 103 174",
+        title: "ASiC Baseline Profile",
         status: :drafting,
         updated_at: Date.new(2016, 5, 12)
       }
