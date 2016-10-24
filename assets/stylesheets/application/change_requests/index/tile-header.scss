@@ -31,6 +31,8 @@ header {
   }
 
   @media all and(min-width: $screen-sm-min) {
+    padding: $tile-header-padding-sm;
+
     .toggle {
       padding-top: 0;
     }
