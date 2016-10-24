@@ -11,4 +11,9 @@ runInitializer('.change_requests.index', () => {
     evt.preventDefault();
     $(this).closest('.tile').find('.more-actions').toggleClass('active');
   });
+
+  $('.tile header').click(function(evt) {
+    evt.preventDefault();
+    $(this).closest('.tile').toggleClass('active');
+  });
 });

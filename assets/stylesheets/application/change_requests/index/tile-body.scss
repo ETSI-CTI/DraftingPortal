@@ -1,5 +1,13 @@
-.body {
+&.active .body {
+  display: block;
 
+  @media all and(min-width: $screen-sm-min) {
+    @include column-flex;
+  }
+}
+
+.body {
+  display: none;
   padding: $tile-body-padding;
 
   .details {
@@ -17,9 +25,7 @@
     }
   }
 
-
   @media all and(min-width: $screen-sm-min) {
-    @include column-flex
     @include justify-content(space-between);
 
     .details {

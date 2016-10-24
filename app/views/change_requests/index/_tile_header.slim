@@ -1,5 +1,7 @@
 .specification
   i.fa.fa-file-text
-  span= change_request.specification
-.title
-  span= change_request.title
+  span= "#{change_request.specification} - #{change_request.title}"
+.toggle
+  a
+    span Properties
+    i.fa

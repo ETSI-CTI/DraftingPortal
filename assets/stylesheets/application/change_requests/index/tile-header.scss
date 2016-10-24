@@ -1,15 +1,38 @@
+&.active header {
+  .toggle {
+    .fa::before {
+      content: "\f0d8";
+    }
+  }
+}
+
 header {
+  @include column-flex;
+
   background: $tile-header-bg;
   color: $tile-header-color;
   padding: $tile-header-padding;
 
   font-size: 1.25em;
 
+  .toggle {
+    @include flex(1);
+    text-align: right;
+    padding-top: 1em;
+
+    .fa::before {
+      content: "\f0d7";
+    }
+
+    a:hover {
+      cursor: pointer;
+      color: lighten($link-color, 15%);
+    }
+  }
+
   @media all and(min-width: $screen-sm-min) {
-    @include column-flex;
-
-    > div { @include flex(1); }
-
-    .title { text-align: right; }
+    .toggle {
+      padding-top: 0;
+    }
   }
 }

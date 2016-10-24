@@ -1,6 +1,6 @@
 class ChangeRequestsController < ApplicationController
 
-  layout "sidebar"
+  layout "default"
 
   before_action :set_service
 
