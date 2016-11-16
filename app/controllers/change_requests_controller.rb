@@ -10,6 +10,13 @@ class ChangeRequestsController < ApplicationController
     @change_requests = @service.find_by_user(current_user)
   end
 
+  def show
+    render text: params[:id]
+  end
+
+  def master
+  end
+
   private
 
   def set_service

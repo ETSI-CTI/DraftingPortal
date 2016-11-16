@@ -1,6 +1,7 @@
 .specification
   i.fa.fa-file-text
-  span= "#{change_request.specification} - #{change_request.title}"
+  a href="#{change_requests_path}/#{change_request.friendly_id}/master"
+    = "#{change_request.specification} - #{change_request.title}"
 .toggle
   a
     span Properties

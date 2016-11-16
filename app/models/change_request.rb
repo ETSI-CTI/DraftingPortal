@@ -12,4 +12,8 @@ class ChangeRequest
     contributed_at
   }
 
+  def friendly_id
+    specification.gsub(" ", "-")
+  end
+
 end

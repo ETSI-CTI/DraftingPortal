@@ -13,6 +13,10 @@ runInitializer('.change_requests.index', () => {
   });
 
   $('.tile header').click(function(evt) {
+    if ($(evt.target).attr('href')) {
+      return;
+    }
+
     evt.preventDefault();
     $(this).closest('.tile').toggleClass('active');
   });
