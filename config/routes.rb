@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :change_requests do
     member do
-      get 'master'
+      get 'contributions'
     end
   end
 

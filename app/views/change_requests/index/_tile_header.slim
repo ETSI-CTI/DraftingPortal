@@ -1,8 +1,8 @@
 .specification
   i.fa.fa-file-text
-  a href="#{change_requests_path}/#{change_request.friendly_id}/master"
-    = "#{change_request.specification} - #{change_request.title}"
+  = link_to "#{change_request.specification} - #{change_request.title}",
+    contributions_change_request_path(id: change_request.friendly_id)
 .toggle
   a
-    span Properties
+    span More&hellip;
     i.fa

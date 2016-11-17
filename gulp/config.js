@@ -11,6 +11,7 @@ module.exports = {
   viewPath: './app/views',
   distPath: distPath,
   jsSrcPath: jsSrcPath,
+  vendorJsPath: './vendor/assets/javascripts/public',
   scssSrcPath: assetPath + '/stylesheets',
   browserSync: {
     proxy: 'localhost:3000'

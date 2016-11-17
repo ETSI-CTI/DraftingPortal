@@ -8,7 +8,10 @@ var gulp = require('gulp'),
 require('./compile-scss');
 require('./compile-js');
 
-gulp.task('rev', ['clean-dist', 'compile-scss', 'minified-js'], function() {
+gulp.task('rev', [
+    'compile-scss',
+    'copy-vendor-js'
+  ], function() {
   return gulp.src([
       config.distPath + '/stylesheets/*.css',
       config.distPath + '/javascripts/*.js'
@@ -25,13 +28,18 @@ gulp.task('clean-dist', function() {
   del.sync([config.distPath + '/**/*']);
 });
 
-gulp.task('minified-js', ['compile-production-js'], function() {
+gulp.task('compile-production-js', ['lint'], function(callback) {
+  compileJs(callback, false);
+});
+
+gulp.task('minified-js', ['compile-production-js', 'clean-dist'], function() {
   return gulp.src(config.distPath + '/javascripts/*.js')
     .pipe(uglify())
     .pipe(gulp.dest(config.distPath + '/javascripts'));
 });
 
-gulp.task('compile-production-js', ['lint'], function(callback) {
-  compileJs(callback, false);
+gulp.task('copy-vendor-js', ['minified-js'], function() {
+  return gulp.src(config.vendorJsPath + '/*.js')
+    .pipe(gulp.dest(config.distPath + '/javascripts'));
 });
 

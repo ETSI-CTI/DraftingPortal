@@ -133,12 +133,20 @@ class ChangeRequestService
     ].map { |attrs| ChangeRequest.new(attrs) }
   end
 
+  def initialize
+    @contribution_service = ContributionService.new
+  end
+
   def find_by_user(user)
     CHANGE_REQUESTS.select { |cr| cr.user.id == user.id }.tap do |result|
       def result.group(key)
         group_by { |cr| cr.status }
       end
     end
+  end
+
+  def contributions_for(specification:)
+    @contribution_service.contributions_for(specification: specification)
   end
 
 end
