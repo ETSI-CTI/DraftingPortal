@@ -1,5 +1,5 @@
-.contributions-container
-  iframe.document src="/documents/master"
-  section.contributions
-    = render partial: "/change_requests/contributions/contributions",
-      locals: { contributions: @contributions }
+.document
+  iframe src="/documents/master"
+section.contributions
+  = render partial: "/change_requests/contributions/contributions",
+    locals: { contributions: @contributions }
