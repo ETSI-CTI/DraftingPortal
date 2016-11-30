@@ -1,0 +1,15 @@
+li.row class=contribution.status
+  .checkbox.col-xs-6.col-md-1
+    input type="checkbox" checked=contribution.checked?
+  .status.col-xs-6.col-md-1
+    .fa class=contribution.status_icon
+  .contribution-info.col-xs-12.col-md-7
+    span= "#{contribution.author} #{contribution.date}"
+  .votes.col-xs-12.col-md-3
+    .up-votes
+      span= contribution.up_votes
+      i.fa.fa-thumbs-up
+    .down-votes
+      span= contribution.down_votes
+      i.fa.fa-thumbs-down
+

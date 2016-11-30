@@ -15,6 +15,10 @@ header {
 
   font-size: 1.25em;
 
+  .specification a {
+    color: $tile-header-color;
+  }
+
   .toggle {
     @include flex(1);
     text-align: right;

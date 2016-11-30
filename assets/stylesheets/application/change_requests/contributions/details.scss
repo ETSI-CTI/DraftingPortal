@@ -1,0 +1,16 @@
+.details {
+  margin: $details-margin;
+
+  .details-body {
+    width: 100%;
+    height: $details-height;
+    padding: 2em;
+    background: $section-bg;
+
+    .empty {
+      width: 100%;
+      text-align: center;
+      color: lighten($text-color, 20%);
+    }
+  }
+}

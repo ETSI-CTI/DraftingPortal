@@ -12,8 +12,12 @@ runInitializer('.change_requests.index', () => {
     $(this).closest('.tile').find('.more-actions').toggleClass('active');
   });
 
-  $('.tile header').click(function(evt) {
+  $('.tile .toggle').click(function(evt) {
     evt.preventDefault();
-    $(this).closest('.tile').toggleClass('active');
+    let $tile = $(this).closest('.tile');
+    [
+      $tile,
+      $tile.find('.more-actions')
+    ].forEach($el => $el.toggleClass('active'));
   });
 });
