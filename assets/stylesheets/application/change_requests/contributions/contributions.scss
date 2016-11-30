@@ -1,0 +1,53 @@
+.contributions {
+  $status-size: 1.5em;
+
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  padding: 1em 1em 1em 2em;
+  background: $porcelain;
+
+  li {
+    padding: 1em 0;
+    line-height: $status-size;
+
+    .status {
+      font-size: $status-size;
+    }
+
+    &.accepted, .up-votes {
+      .fa {
+        color: $brand-success;
+      }
+    }
+
+    &.noted, .down-votes {
+      .fa {
+        color: $brand-danger;
+      }
+    }
+
+    .up-votes, .down-votes {
+      display: inline;
+    }
+
+    &.accepted, &.noted {
+      .votes, .down-votes .fa, .up-votes .fa {
+        color: lighten($text-color, 25%);
+        cursor: inherit;
+      }
+    }
+
+    &.active .votes .fa {
+      cursor: pointer;
+    }
+  }
+
+  .checkbox input[type=checkbox] {
+    margin: -7px 0 0 0;
+  }
+
+}
+
