@@ -33,7 +33,3 @@ capybara-*.html
 
 #sensitive data
 .env
-
-#vendor-js copied by gulp
-/public/assets/javascripts/respec-etsi*
-
