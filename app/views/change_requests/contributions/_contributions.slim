@@ -1,7 +1,14 @@
 header
   = render partial: "change_requests/contributions/header"
-ul.list
-  = render partial: "change_requests/contributions/contribution",
-    collection: contributions
+
+.list
+  ul
+    = render partial: "change_requests/contributions/contribution",
+      collection: contributions
+
+  section.legend
+      = render partial: "/change_requests/contributions/legend"
+
 section.details
+  = render partial: "/change_requests/contributions/details"
 

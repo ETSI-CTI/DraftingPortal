@@ -1,13 +1,26 @@
 .contributions {
   $status-size: 1.5em;
+  $list-margin: 1em 1em 0 0;
+  $details-margin: 4em 1em 1em 0;
+  $details-height: 25em;
+  $section-bg: lighten($porcelain, 5%);
+
+  @import "legend";
+  @import "details";
 
   h1 {
     font-size: 2em;
     font-weight: bold;
   }
 
-  padding: 1em 1em 1em 2em;
+  padding: 1em;
   background: $porcelain;
+
+  .list {
+    margin: $list-margin;
+    padding: .5em;
+    background: $section-bg;
+  }
 
   li {
     padding: 1em 0;
