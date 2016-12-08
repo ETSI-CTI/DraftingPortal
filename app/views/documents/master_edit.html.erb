@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render "/documents/master_head" %>
+    <style>
+      html, body, body > .mce-container {
+        margin: 0;
+        border: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="document" class="document">
+	<%= render "/documents/master_body" %>
+    </textarea>
+
+    <script src="<%= gulp_asset_path("javascripts/tinymce.full.min.js") %>"></script>
+    <script>
+      var respecConfig = {
+        wg:         "ITS",
+        specStatus: "WD",
+        specType:   "TS",
+        specIndex:  "102687",
+        subtitle:   "Access layer part",
+        specVersion:"1.1.1",
+        editors: [
+	  {
+	    name:       "ETSI Secretariat",
+	    url:        "http://www.etsi.org",
+	    company:    "ETSI",
+	    companyURL: "http://www.etsi.org/"
+	  }
+        ],
+	wgURI:        "http://www.etsi.org/index.php/technologies-clusters/technologies/intelligent-transport",
+	wgPublicList: "ITS",
+	wgPatentURI:  "https://portal.etsi.org/Portals/0/Users/224/24/224/IPR-call_35_directives_dec_2015.pdf",
+	publishDate : '2014-01-13'
+      };
+    </script>
+    <script>
+      var iframeHeight = document.body.offsetHeight;
+
+      tinymce.init({
+	selector: "textarea#document",
+	theme: "modern",
+        width: "100%",
+        height: iframeHeight - 130,
+	plugins: [
+	     "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+	     "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+	     "localfile table contextmenu directionality emoticons template paste textcolor sidepanel navpanel typograf",
+	     "tabulator respec"
+        ],
+        toolbar: "insertfile undo redo | styleselect | bold italic forecolor backcolor | " +
+          "alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | " +
+	  "abbr link image | print preview fullpage docproperties",
+        style_formats: [
+	  {title: 'Header 1', block: 'h1'},
+	  {title: 'Header 2', block: 'h2'},
+	  {title: 'Header 3', block: 'h3'},
+	  {title: 'Header 4', block: 'h4'},
+	  {title: 'Header 5', block: 'h5'},
+	  {title: 'Header 6', block: 'h6'},
+	  {title: 'Normal',   block: 'p'},
+	  {title: 'Abbreviation', inline: 'abbr'}
+        ],
+        file_browser_callback : 'myFileBrowser',
+        navpanel_show_on_start: true,
+        image_advtab: true
+      });
+
+
+      tinymce.each(tinymce.editors, function(e){
+	e.on('savecontent', function(e){
+		console.log('savecontent');
+	});
+      });
+
+      function handleFileSelect(evt) {
+	var files = evt.target.files;
+      }
+
+      function myFileBrowser (field_name, url, type, win) {
+        // Check for the various File API support.
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+          // Great success! All the File APIs are supported.
+        } else {
+           alert('The File APIs are not fully supported in this browser.');
+        }
+        // alert("Field_Name: " + field_name + "nURL: " + url + "nType: " + type + "nWin: " + win); // debug/testing
+        return false;
+
+      }
+    </script>
+  </body>
+</html>

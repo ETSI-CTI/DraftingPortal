@@ -14,6 +14,10 @@ class ChangeRequestsController < ApplicationController
     render text: params[:id]
   end
 
+  def edit
+    # no params
+  end
+
   def contributions
     @contributions = @service.contributions_for(
       specification: params[:id]
