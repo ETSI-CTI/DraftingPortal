@@ -1,3 +1,5 @@
+@import "mixins/iframed-document";
+
 @mixin size($value) {
   $width: nth($value, 1);
   $height: $width;

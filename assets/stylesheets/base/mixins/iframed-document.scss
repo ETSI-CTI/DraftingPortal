@@ -1,0 +1,28 @@
+@mixin iframed-document {
+  .main.container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .document {
+    height: 100vh;
+
+    iframe {
+      @include size(100%);
+      border: none;
+    }
+  }
+
+  @media all and(min-width: $screen-sm-min) {
+    .main.container {
+      height: inherit;
+      @include display(flex);
+    }
+
+    .document {
+      height: inherit;
+      @include flex(2);
+    }
+  }
+}

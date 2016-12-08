@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   get '/documents/master' => 'documents#master'
+  get '/documents/master_edit' => 'documents#master_edit'
 
   get '/login' => 'login#login'
 

@@ -39,7 +39,7 @@ gulp.task('minified-js', ['compile-production-js', 'clean-dist'], function() {
 });
 
 gulp.task('copy-vendor-js', ['minified-js'], function() {
-  return gulp.src(config.vendorJsPath + '/*.js')
+  return gulp.src(config.vendorJsPath + '/**/*')
     .pipe(gulp.dest(config.distPath + '/javascripts'));
 });
 
