@@ -14,19 +14,41 @@
     li
       a.history href="#"
         span Show History
-        i.fa.fa-file
+        i.fa.fa-clock-o
     li
       a.history href="#"
         span Compare
         i.fa.fa-arrows-h
+    - if change_request.mergeable?
+      li
+        a.merge-with href="#"
+          span Merge with
+          i.fa.fa-share
 
 .action-set
   ul
-    li
-      a.contribute href="#"
-        span Contribute
-        i.fa.fa-send
-    li
-      a.delete href="#"
-        span Delete
-        i.fa.fa-remove
+    - if change_request.contributable?
+      li
+        a.contribute href="#"
+          span Contribute
+          i.fa.fa-send
+    - if change_request.recontributable?
+      li
+        a.recontribute href="#"
+          span Recontribute
+          i.fa.fa-send
+    - if change_request.applicable?
+      li
+        a.apply href="#"
+          span Apply
+          i.fa.fa-check
+    - if change_request.deleteable?
+      li
+        a.delete href="#"
+          span Delete
+          i.fa.fa-remove
+    - if change_request.hideable?
+      li
+        a.hide href="#"
+          span Hide
+          i.fa.fa-minus-square

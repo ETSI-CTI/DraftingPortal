@@ -4,7 +4,7 @@
   }
 
   .authored-by-user {
-    color: $confetti;
+    color: darken($confetti, 10%);
   }
 
   @media all and(min-width: $screen-sm-min) {
