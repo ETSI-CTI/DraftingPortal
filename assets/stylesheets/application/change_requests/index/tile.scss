@@ -11,6 +11,10 @@
   $tile-header-color: $porcelain;
   $tile-header-padding: 1em;
   $tile-header-padding-sm: 1em 2em;
+  $tile-specification-padding: .5em 0 0 0;
+  $tile-actions-btn-padding: .7em 1.5em;
+  $tile-actions-margin: 1em;
+  $tile-actions-margin-sm: 0;
 
   $tile-body-padding: 1em;
   $details-dl-padding: .5em;
@@ -18,13 +22,11 @@
   $details-dt-color: inherit;
   $details-dd-bg: inherit;
 
-  $tile-actions-padding: 1em 2em;
   $tile-more-actions-bg: darken($porcelain, 10%);
   $tile-more-actions-padding: 1.5em 1em;
 
   @import "tile-header";
   @import "tile-body";
-  @import "tile-actions";
   @import "more-actions";
 
   font-family: Roboto;

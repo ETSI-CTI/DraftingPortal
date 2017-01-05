@@ -1,44 +1,73 @@
 &.active header {
   .toggle {
-    .fa::before {
+    .toggle-icon::before {
       content: "\f0d8";
     }
   }
 }
 
 header {
-  @include column-flex;
 
   background: $tile-header-bg;
   color: $tile-header-color;
   padding: $tile-header-padding;
 
-  font-size: 1.25em;
 
-  .specification a {
-    color: $tile-header-color;
+  .specification {
+    @include flex(1);
+    padding: $tile-specification-padding;
+    text-align: center;
+    font-size: 1.25em;
+
+    a {
+      color: $tile-header-color;
+    }
   }
 
-  .toggle {
-    @include flex(1);
-    text-align: right;
-    padding-top: 1em;
+  .tile-actions {
+    @include column-flex;
+    @include justify-content(center);
+    margin: $tile-actions-margin;
 
-    .fa::before {
-      content: "\f0d7";
+    .btn {
+      margin: 0;
+      padding: $tile-actions-btn-padding;
     }
 
-    a:hover {
-      cursor: pointer;
-      color: lighten($link-color, 15%);
+
+    .toggle {
+      .toggle-icon {
+        font-size: 3em;
+        margin-left: 5px;
+
+        &::before {
+          content: "\f0d7";
+        }
+      }
+
+      a:hover {
+        cursor: pointer;
+        color: lighten($link-color, 15%);
+      }
     }
   }
 
   @media all and(min-width: $screen-sm-min) {
+    @include column-flex;
     padding: $tile-header-padding-sm;
 
-    .toggle {
-      padding-top: 0;
+    .specification {
+      text-align: left;
+    }
+
+    .tile-actions {
+      @include flex(1);
+      @include justify-content(flex-end);
+      margin: $tile-actions-margin-sm;
+
+      .toggle {
+        padding-top: 0;
+      }
     }
   }
 }
