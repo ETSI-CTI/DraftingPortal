@@ -1,6 +1,8 @@
-@import "index/change-requests";
 
 .change_requests.index {
+  @import "index/legend";
+  @import "index/change-requests";
+
   $header-margin: 4em 0;
 
   .workspace > header {

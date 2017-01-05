@@ -1,0 +1,17 @@
+.legend {
+  .item {
+    margin: 1em;
+  }
+
+  .authored-by-user {
+    color: $confetti;
+  }
+
+  @media all and(min-width: $screen-sm-min) {
+    text-align: center;
+
+    .item {
+      display: inline-block;
+    }
+  }
+}

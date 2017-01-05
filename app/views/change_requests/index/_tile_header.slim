@@ -1,5 +1,8 @@
 .specification
-  i.fa.fa-file-text
+  - if change_request.author.id == current_user.id
+    i.authored-by-user.fa.fa-user
+  - else
+    i.fa.fa-file-text
   = link_to "#{change_request.specification} - #{change_request.title}",
     contributions_change_request_path(id: change_request.friendly_id)
 .tile-actions

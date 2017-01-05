@@ -12,7 +12,6 @@ header {
   color: $tile-header-color;
   padding: $tile-header-padding;
 
-
   .specification {
     @include flex(1);
     padding: $tile-specification-padding;
@@ -21,6 +20,10 @@ header {
 
     a {
       color: $tile-header-color;
+    }
+
+    .authored-by-user {
+      color: $authored-by-user-color;
     }
   }
 
