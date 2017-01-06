@@ -1,43 +1,27 @@
 .details
-  dl.id
-    dt ID
-    dd= change_request.id
+  dl.owner
+    dt Owner
+    dd= change_request.owner.full_name
   dl.author
     dt Author
     dd= change_request.author.full_name
-  dl.updated-at
-    dt Updated at
-    dd= change_request.updated_at
-  - if change_request.contributed_at.present?
-    dl.contributed-at
-      dt Contributed at
-      dd= change_request.contributed_at
-.details
-  dl.id
-    dt ID
-    dd= change_request.id
-  dl.author
-    dt Author
-    dd= change_request.author.full_name
-  dl.updated-at
-    dt Updated at
-    dd= change_request.updated_at
-  - if change_request.contributed_at.present?
-    dl.contributed-at
-      dt Contributed at
-      dd= change_request.contributed_at
-.details
-  dl.id
-    dt ID
-    dd= change_request.id
-  dl.author
-    dt Author
-    dd= change_request.author.full_name
-  dl.updated-at
-    dt Updated at
-    dd= change_request.updated_at
-  - if change_request.contributed_at.present?
-    dl.contributed-at
-      dt Contributed at
-      dd= change_request.contributed_at
-
+  dl.last-edited-by
+    dt Last commit
+    dd= change_request.last_edited_by&.full_name
+- if change_request.last_edited_by
+  .last-commit
+    h3 Commit Details
+    .details
+      dl.date
+        dt Date
+        dd= change_request.updated_at
+      dl.comment
+        dt Comment
+        dd= change_request.comment
+- if change_request.contributed_at
+  .contributed_at
+    h3 Contribution Details
+    .details
+      dl.date
+        dt Contribution date
+        dd= change_request.contributed_at

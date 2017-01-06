@@ -3,11 +3,12 @@ require 'helpers/model_decorator'
 module ChangeRequests
   class Show < Helpers::ModelDecorator
 
-    attr_reader :permissions
+    attr_reader :owner, :permissions
 
-    def initialize(change_request:, permissions:)
+    def initialize(change_request:, owner:, permissions:)
       super(change_request)
       @permissions = permissions
+      @owner = owner
     end
 
     def editable?

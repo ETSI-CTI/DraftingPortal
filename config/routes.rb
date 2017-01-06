@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     member do
       get 'contributions'
     end
+    collection do
+      get 'add_existing'
+    end
   end
 
   get '/documents/master' => 'documents#master'

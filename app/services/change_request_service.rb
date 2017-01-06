@@ -154,10 +154,12 @@ class ChangeRequestService
   end
 
   def find_by_user(user)
+    owner = UserService.new.find(:larry_page)
     definition = CHANGE_REQUESTS_BY_USER[user.id]
     definition[:ids].map do |id|
       ChangeRequests::Show.new(
         change_request: CHANGE_REQUESTS[id - 1],
+        owner: owner,
         permissions: Set.new(definition[:permissions][id])
       )
     end.tap do |result|

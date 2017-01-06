@@ -2,7 +2,9 @@
   display: block;
 
   @media all and(min-width: $screen-sm-min) {
-    @include column-flex;
+    .details {
+      @include column-flex;
+    }
   }
 }
 
@@ -26,11 +28,14 @@
   }
 
   @media all and(min-width: $screen-sm-min) {
-    @include justify-content(space-between);
 
     .details {
+      @include justify-content(space-between);
       margin: 1em;
-      @include flex-basis(300px);
+
+      dl {
+        @include flex-basis(300px);
+      }
     }
   }
 }

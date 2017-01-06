@@ -18,6 +18,11 @@ header {
     text-align: center;
     font-size: 1.25em;
 
+    .name {
+      font-size: .9em;
+      color: darken($tile-header-color, 20%);
+    }
+
     a {
       color: $tile-header-color;
     }
@@ -61,6 +66,14 @@ header {
 
     .specification {
       text-align: left;
+
+      .title, .name {
+        display: inline-block;
+      }
+
+      .name {
+        padding-left: 1em;
+      }
     }
 
     .tile-actions {

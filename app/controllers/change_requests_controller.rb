@@ -14,6 +14,14 @@ class ChangeRequestsController < ApplicationController
     render text: params[:id]
   end
 
+  def new
+    # no params
+  end
+
+  def add_existing
+    # no params
+  end
+
   def edit
     # no params
   end
