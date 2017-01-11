@@ -1,0 +1,17 @@
+form.form {
+  max-width: 750px;
+  margin: auto;
+
+  section.actions {
+    text-align: center;
+    padding: 2em;
+
+    a {
+      margin: 0 10px;
+    }
+
+    .btn-primary {
+      width: 10em;
+    }
+  }
+}

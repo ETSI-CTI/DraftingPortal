@@ -1,0 +1,30 @@
+.specification.form-group.required
+  label Select a specification:
+
+  input.form-control[
+    type="text"
+    list="specifications"
+    required="true"
+    placeholder="Type to search for a specification"
+  ]
+  datalist#specifications
+    option value="TS 129 165 V13.6.0"
+    option value="TS 123 205 V13.0.0"
+    option value="TS 137 141 V13.4.0"
+    option value="TS 322 118 V1.0.0"
+    option value="TS 142 219 V2.7.1"
+
+.base-change-request.form-group.required
+  label Select base change request (Master by default):
+  select.select-control.form-control
+    option value="master" selected=true Master
+    option value="cr1" Updated TOC (John Smith)
+    option value="cr2" Added new paragraph (John Smith)
+    option value="cr3" Correct typos and wording (Bill Gates)
+
+.comment.form-group
+  label Comment:
+  textarea.form-control rows="10" placeholder="(optional)"
+
+section.actions
+  = render "/change_requests/new/actions"
