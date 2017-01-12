@@ -1,4 +1,4 @@
-- ChangeRequest::Status.all.values.each_with_object(@change_requests.group(:status)) do |status, grouped|
+- ChangeRequest::Status.ordered.each_with_object(@change_requests.group(:status)) do |status, grouped|
   - if grouped[status]
     = render partial: "/change_requests/index/tile_section",
       locals: { status: status, change_requests: grouped[status] }

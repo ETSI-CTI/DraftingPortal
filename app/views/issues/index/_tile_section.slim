@@ -1,0 +1,13 @@
+section class="tiles active #{status}"
+  .tile-status
+    h1
+      span= status
+      - if issues
+        i.toggle.fa
+
+  - if issues
+    = render partial: "/issues/index/tile",
+      collection: issues,
+      as: "issue"
+  - else
+    = render partial: "issues/index/empty_tiles"

@@ -164,7 +164,7 @@ class ChangeRequestService
       )
     end.tap do |result|
       def result.group(key)
-        group_by { |cr| cr.status }
+        group_by { |cr| cr.send(key) }
       end
     end
   end

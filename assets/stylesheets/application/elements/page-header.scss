@@ -1,0 +1,18 @@
+header.page-header {
+  $header-margin: 4em 0 2em 0;
+
+  border-bottom: none; // BS override
+
+  margin: $header-margin;
+
+  h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+
+  @media all and(min-width: $screen-sm-min) {
+    h1 {
+      font-size: 3em;
+    }
+  }
+}

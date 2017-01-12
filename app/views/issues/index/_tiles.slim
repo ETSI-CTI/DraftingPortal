@@ -1,0 +1,3 @@
+- Issue::Status.ordered.each_with_object(@issues.group(:status)) do |status, grouped|
+  = render partial: "/issues/index/tile_section",
+    locals: { status: status, issues: grouped[status] }

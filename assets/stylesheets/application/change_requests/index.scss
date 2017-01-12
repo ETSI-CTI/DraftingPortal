@@ -1,18 +1,8 @@
-
 .change_requests.index {
   @import "index/legend";
   @import "index/change-requests";
 
-  $header-margin: 4em 0;
-
   .workspace > header {
-    margin: $header-margin;
-
-    h1 {
-      font-size: 2em;
-      margin: 0;
-    }
-
     .input-group {
       margin: 1em;
     }
@@ -20,10 +10,6 @@
 
   @media all and(min-width: $screen-sm-min) {
     .workspace > header {
-      h1 {
-        font-size: 3em;
-      }
-
       .input-group {
         margin: .5em 0 0 0;
       }

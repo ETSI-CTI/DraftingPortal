@@ -24,3 +24,8 @@
 @mixin crisp-edges {
   border-radius: 0;
 }
+
+@mixin column-flex {
+  @include display(flex);
+  @include flex-flow(row wrap);
+}

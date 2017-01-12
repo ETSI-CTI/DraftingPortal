@@ -1,4 +1,7 @@
 .more-actions {
+  $tile-more-actions-bg: darken($porcelain, 10%);
+  $tile-more-actions-padding: 1.5em 1em;
+
   background: $tile-more-actions-bg;
   padding: $tile-more-actions-padding;
   display: none;

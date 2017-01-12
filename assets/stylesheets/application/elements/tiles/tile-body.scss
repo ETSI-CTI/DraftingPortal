@@ -30,7 +30,7 @@
   @media all and(min-width: $screen-sm-min) {
 
     .details {
-      @include justify-content(space-between);
+      @include justify-content(space-around);
       margin: 1em;
 
       dl {

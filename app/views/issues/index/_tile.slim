@@ -1,0 +1,9 @@
+.tile
+  header
+    = render partial: "/issues/index/tile_header",
+      locals: { issue: issue }
+  .body
+    = render partial: "/issues/index/tile_body",
+      locals: { issue: issue }
+
+

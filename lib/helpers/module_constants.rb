@@ -5,7 +5,13 @@ module Helpers
       @_module_constants_hash ||= compute_hash
     end
 
+    def ordered
+      @_ordered
+    end
+
     def define(symbols)
+      @_ordered = symbols
+
       symbols.each do |sym|
         const_set(
           sym.to_s.upcase,

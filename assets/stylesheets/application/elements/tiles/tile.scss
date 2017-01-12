@@ -1,10 +1,5 @@
 .tile {
 
-  @mixin column-flex {
-    @include display(flex);
-    @include flex-flow(row wrap);
-  }
-
   $tile-bg: #f6f6f6;
 
   $tile-header-bg: $sidebar-bg;
@@ -23,15 +18,18 @@
   $details-dt-color: inherit;
   $details-dd-bg: inherit;
 
-  $tile-more-actions-bg: darken($porcelain, 10%);
-  $tile-more-actions-padding: 1.5em 1em;
-
   @import "tile-header";
   @import "tile-body";
-  @import "more-actions";
 
   font-family: Roboto;
   background: $tile-bg;
   margin: 2em 0;
+
+  &.empty {
+    background: inherit;
+    text-align: center;
+
+    color: lighten($text-color, 25%);
+  }
 
 }

@@ -8,17 +8,10 @@ class ChangeRequestsController < ApplicationController
 
   def index
     @change_requests = @service.find_by_user(current_user)
-  end
-
-  def show
-    render text: params[:id]
+    respond_with(@change_requests)
   end
 
   def new
-    # no params
-  end
-
-  def add_existing
     # no params
   end
 
@@ -26,10 +19,15 @@ class ChangeRequestsController < ApplicationController
     # no params
   end
 
+  def add_existing
+    # no params
+  end
+
   def contributions
     @contributions = @service.contributions_for(
       specification: params[:id]
     )
+    respond_with(@contributions)
   end
 
   private

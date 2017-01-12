@@ -12,13 +12,9 @@
         span.primary ETSI
         span.secondary NWM Portal
   #navbar.navbar-collapse.collapse
+    ul.top-level-menu.nav.navbar-nav
+      = render "/shared/top_level_menu"
     ul.nav.navbar-nav.navbar-right
-      li.active
-        a href="#"
-          = t(".about")
-      li
-        a href="#"
-          = t(".contact")
       li
         = render "layouts/shared/navbar_user_selection"
 

@@ -1,5 +1,6 @@
 nav.navbar-static-top {
-  $link-height: 20px;
+  $menu-item-font-size: 16px;
+  $menu-item-height: 30px;
 
   margin-bottom: 0;
   background-color: $navbar-bg;
@@ -72,6 +73,7 @@ nav.navbar-static-top {
     $menu-item-padding: 15px;
     $menu-item-padding-md: 35px 15px;
 
+    font-size: $menu-item-font-size;
     color: $navbar-color;
 
     > li > * {
@@ -83,12 +85,13 @@ nav.navbar-static-top {
     }
 
     a {
-      line-height: $link-height;
+      line-height: $menu-item-height;
       color: $navbar-color;
       font-family: MavenPro;
 
       &:hover {
         color: lighten($navbar-color, 10%);
+        text-decoration: underline;
       }
 
       &.logout {
@@ -103,6 +106,8 @@ nav.navbar-static-top {
     }
 
     @media all and(min-width: $screen-md-min) {
+      margin-left: $navbar-menu-margin;
+
       > li > * {
         padding: $menu-item-padding-md;
       }
