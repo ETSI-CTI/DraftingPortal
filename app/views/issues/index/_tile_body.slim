@@ -4,4 +4,7 @@
     dd= issue.branch
   dl.associated-contributions
     dt Associated Contributions
-    dd= issue.associated_contributions.first
+    dd
+      a[
+        href=contributions_change_request_path(id: issue.associated_contributions.first.id)
+      ]= issue.associated_contributions.first.name

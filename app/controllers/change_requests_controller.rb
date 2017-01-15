@@ -24,9 +24,7 @@ class ChangeRequestsController < ApplicationController
   end
 
   def contributions
-    @contributions = @service.contributions_for(
-      specification: params[:id]
-    )
+    @contributions = @service.contributions_for(params[:id])
     respond_with(@contributions)
   end
 

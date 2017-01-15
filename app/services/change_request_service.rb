@@ -67,7 +67,7 @@ class ChangeRequestService
         author: john_smith,
         specification: SPECIFICATION,
         title: SPECIFICATION_TITLE,
-        status: :noted,
+        status: :not_accepted,
         last_edited_by: john_smith,
         comment: "Add something to the spec",
         updated_at: Date.new(2016, 4, 10),
@@ -169,8 +169,16 @@ class ChangeRequestService
     end
   end
 
-  def contributions_for(specification:)
-    @contribution_service.contributions_for(specification: specification)
+  def find_by_id(id)
+    ChangeRequests::Show.new(
+      owner: UserService.new.find(:larry_page),
+      change_request: CHANGE_REQUESTS[id - 1],
+      permissions: Set.new()
+    )
+  end
+
+  def contributions_for(change_request_id)
+    @contribution_service.contributions_for(change_request_id)
   end
 
 end

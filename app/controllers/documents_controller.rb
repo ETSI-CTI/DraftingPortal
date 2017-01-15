@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
 
-  def master
+  def master_contributions
     render layout: false
   end
 

@@ -2,9 +2,15 @@ header
   = render partial: "change_requests/contributions/header"
 
 .list
-  ul
+  .selected
+    h3 Selected contribution
     = render partial: "change_requests/contributions/contribution",
-      collection: contributions
+      locals: { contribution: contributions.selected, selected: true }
+  .rest
+    h3 Other contributions
+    ul
+      = render partial: "change_requests/contributions/contribution",
+        collection: contributions.rest
 
   section.legend
       = render partial: "/change_requests/contributions/legend"
