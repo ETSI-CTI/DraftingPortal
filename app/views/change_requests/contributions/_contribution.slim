@@ -1,15 +1,25 @@
-li.row class=contribution.status
-  .checkbox.col-xs-6.col-md-1
-    input type="checkbox" checked=contribution.checked?
-  .status.col-xs-6.col-md-1
-    .fa class=contribution.status_icon
-  .contribution-info.col-xs-12.col-md-7
-    span= "#{contribution.author} #{contribution.date}"
-  .votes.col-xs-12.col-md-3
-    .up-votes
-      span= contribution.up_votes
-      i.fa.fa-thumbs-up
-    .down-votes
-      span= contribution.down_votes
-      i.fa.fa-thumbs-down
+li.contribution[
+  class= contribution.status.to_s.dasherize
+  data-change-request-id=contribution.change_request_id
+]
+  .row
+    .checkbox.col-xs-6.col-md-1
+      input.toggle type="checkbox" checked=contribution.checked?
+    .status.col-xs-6.col-md-1
+      .fa class=contribution.status_icon
+    .name.col-xs-6.col-md-6
+      span= contribution.name
+    .color-legend.col-xs-6.col-md-4
+      .color class="color-#{contribution.change_request_id}"
+  .row
+    .contribution-info.col-xs-12.col-md-6.col-md-offset-2
+      span.author= contribution.author
+      span.date= "(#{l(contribution.date)})"
+    .votes.col-xs-12.col-md-4
+      .up-votes
+        span= contribution.up_votes
+        i.fa.fa-thumbs-up
+      .down-votes
+        span= contribution.down_votes
+        i.fa.fa-thumbs-down
 

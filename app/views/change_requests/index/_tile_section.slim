@@ -1,7 +1,7 @@
 section class="tiles active #{status}"
   .tile-status
     h1
-      span= status
+      span= status.to_s.gsub("_", " ")
       i.toggle.fa
 
   = render partial: "/change_requests/index/tile",

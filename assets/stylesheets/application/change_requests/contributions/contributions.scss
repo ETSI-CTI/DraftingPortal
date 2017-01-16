@@ -4,6 +4,10 @@
   $details-margin: 4em 1em 1em 0;
   $details-height: 20em;
   $section-bg: lighten($porcelain, 5%);
+  $contribution-margin: 1em;
+  $contribution-padding: 1em;
+  $contribution-bg: #efefef;
+  $row-margin: .7em 0;
 
   @import "legend";
   @import "details";
@@ -22,13 +26,12 @@
     background: $section-bg;
   }
 
-  li {
-    padding: 1em 0;
+  .contribution {
+    margin: $contribution-margin;
+    padding: $contribution-padding;
     line-height: $status-size;
+    background: $contribution-bg;
 
-    .status {
-      font-size: $status-size;
-    }
 
     &.accepted, .up-votes {
       .fa {
@@ -36,17 +39,13 @@
       }
     }
 
-    &.noted, .down-votes {
+    &.not-accepted, .down-votes {
       .fa {
         color: $brand-danger;
       }
     }
 
-    .up-votes, .down-votes {
-      display: inline;
-    }
-
-    &.accepted, &.noted {
+    &.accepted, &.not-accepted {
       .votes, .down-votes .fa, .up-votes .fa {
         color: lighten($text-color, 25%);
         cursor: inherit;
@@ -58,8 +57,49 @@
     }
   }
 
+  .row {
+    margin: $row-margin;
+  }
+
   .checkbox input[type=checkbox] {
     margin: -7px 0 0 0;
+  }
+
+  .status {
+    font-size: $status-size;
+  }
+
+  .color-legend {
+    .color {
+      height: $status-size;
+      line-height: $status-size;
+      display: block;
+      width: 50%;
+      margin: auto;
+
+      &.color-1 { background: navy; }
+      &.color-2 { background: blue; }
+      &.color-3 { background: fuchsia; }
+      &.color-4 { background: green; }
+      &.color-5 { background: maroon; }
+      &.color-6 { background: purple; }
+      &.color-7 { background: olive; }
+    }
+  }
+
+  .votes {
+    text-align: center;
+
+    .up-votes, .down-votes {
+      display: inline;
+    }
+  }
+
+  .contribution-info {
+    .date {
+      padding-left: 5px;
+      color: lighten($text-color, 10%);
+    }
   }
 
 }

@@ -23,7 +23,7 @@ class ChangeRequest
       drafting
       contributed
       accepted
-      noted
+      not_accepted
       implemented
     }
   end

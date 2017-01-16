@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :issues, only: %i{ index }
 
-  get '/documents/master' => 'documents#master'
+  get '/documents/master_contributions' => 'documents#master_contributions'
   get '/documents/master_edit' => 'documents#master_edit'
 
   get '/login' => 'login#login'

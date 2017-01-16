@@ -5,7 +5,7 @@
     - else
       i.fa.fa-users
     = link_to "#{change_request.specification} - #{change_request.title}",
-      contributions_change_request_path(id: change_request.friendly_id)
+      contributions_change_request_path(id: change_request.id)
   .name
     span= change_request.name
 .tile-actions
