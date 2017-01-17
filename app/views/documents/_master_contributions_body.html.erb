@@ -3,59 +3,59 @@
   display: none;
 }
 
-.removed {
-    text-decoration: line-through;
-    color: red;
+.ctr {
+  display: block;
+}
+.ctr.removed {
+  text-decoration: line-through;
 }
 .added {
-    text-decoration: underline;
-    color: green;
-}
-
-.ctr {
   display: none;
 }
-.ctr-1 {
+.ctr.added {
+  display: block;
+}
+.ctr.ctr-1 {
     color:navy;
 }
-.ctr-2 {
+.ctr.ctr-2 {
     color:blue;
 }
-.ctr-3 {
+.ctr.ctr-3 {
     color:fuchsia;
 }
-.ctr-4 {
+.ctr.ctr-4 {
     color:green;
 }
-.ctr-5 {
+.ctr.ctr-5 {
     color:maroon;
 }
-.ctr-6 {
+.ctr.ctr-6 {
     color:purple;
 }
-.ctr-7 {
+.ctr.ctr-7 {
     color:olive;
 }
 </style>
 
 <section id="abstract" class="introductory">
 <h1 id="hdr-azyduiemli7o0">Introduction</h1>
-<p>Decentralized congestion control (DCC) is a necessity in an <em>ad hoc</em> network.<span class="ctr ctr-3 removed"> To be continued&hellip;</span></p>
+<p>Decentralized congestion control (DCC) is a necessity in an <em>ad hoc</em> network.<span class="ctr-3 removed"> To be continued&hellip;</span></p>
 </section>
 <section>
 <h1 id="hdr-abto2ft0ha0zj">Scope</h1>
 <p>The present document provides means of controlling the data traffic injected to a frequency channel. More specifically, it specifies a DCC algorithm that can be used on all frequency channels contained in the frequency bands ITS-G5A, ITS-G5B, and ITS-G5D, and as required by ETSI EN 302 571. The algorithm can perform data traffic shaping of any upper layer protocol.</p>
-<p class="ctr ctr-3 added">The DCC algorithm is not finished yet, so this document shall not be used in any kind of mandatory specification.</p>
+<p class="ctr-3 added">The DCC algorithm is not finished yet, so this document shall not be used in any kind of mandatory specification.</p>
 </section>
 <section>
 <h1 id="hdr-6gp8vs59yi30p">References</h1>
-<p class="ctr ctr-3 removed">References are either specific (identified by date of publication and/or edition number or version number) or non-specific. For specific references,only the cited version applies. For non-specific references, the latest version of the referenced document (including any amendments) applies.</p>
-<p class="ctr ctr-3 removed">Referenced documents which are not found to be publicly available in the expected location might be found at <a href="http://docbox.etsi.org/Reference">http://docbox.etsi.org/Reference</a>.</p>
-<p class="NO ctr ctr-3 removed">NOTE: While any hyperlinks included in this clause were valid at the time of publication, ETSI cannot guarantee their long term validity.</p>
+<p class="ctr-3 removed">References are either specific (identified by date of publication and/or edition number or version number) or non-specific. For specific references,only the cited version applies. For non-specific references, the latest version of the referenced document (including any amendments) applies.</p>
+<p class="ctr-3 removed">Referenced documents which are not found to be publicly available in the expected location might be found at <a href="http://docbox.etsi.org/Reference">http://docbox.etsi.org/Reference</a>.</p>
+<p class="NO ctr-3 removed">NOTE: While any hyperlinks included in this clause were valid at the time of publication, ETSI cannot guarantee their long term validity.</p>
 <section>
 <h2 id="hdr-9p1mqjht9py41">Normative references</h2>
 <p class="EX">[1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ETSI EN 302 663 (V1.2.1): &ldquo;Intelligent Transport Systems (ITS): Access layer specification for Intelligent Transport Systems operating in the 5 GHz band&rdquo;.</p>
-<p class="EX">[2]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ETSI EN 302 571 <span class="ctr ctr-7 removed">(V1.2.0)</span><span class="ctr ctr-7 added">(V1.2.1)</span>: &ldquo;Intelligent Transport Systems (ITS); Radio communications equipment operating in the 5855 MHz to 5925 MHz frequency band; Harmonized EN covering the essential requirements of article 3.2 of the R&amp;TTE directive&rdquo;.</p>
+<p class="EX">[2]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ETSI EN 302 571 <span class="ctr-7 removed">(V1.2.0)</span><span class="ctr-7 added">(V1.2.1)</span>: &ldquo;Intelligent Transport Systems (ITS); Radio communications equipment operating in the 5855 MHz to 5925 MHz frequency band; Harmonized EN covering the essential requirements of article 3.2 of the R&amp;TTE directive&rdquo;.</p>
 </section>
 <section>
 <h2 id="hdr-p1pxg88rke3db">Informative references</h2>
@@ -115,7 +115,7 @@
 <h2 id="hdr-owq2j2ksqykvq">Introduction</h2>
 <p>The main objective with the present document is to specify a decentralized congestion control (<abbr title="Decentralized Congestion Control">DCC</abbr>) algorithm that can work with any networking &amp; transport layer protocol. The algorithm outlined in Clause 5 is independent of the access layer technology and the protocols on networking &amp; transport layer. The outcome of the algorithm will be used for a gate-keeping functionality at the access layer described in Clause 6 and this is tailored towards the access technology ITS-G5 [1], where the different queues offered by the medium acess control (<abbr title="Medium Acess Control">MAC</abbr>) algorithm is utilized for prioritization. And also we can test the must and must not words here.</p>
 </section>
-<section class="ctr ctr-5 added">
+<section class="ctr-5 added">
 <h2 id="hdr-ga2on87966hdi">DCC implementation</h2>
 <p>The DCC can not be implemented in the real life. It is just an existencial abstraction.</p>
 </section>
@@ -164,7 +164,7 @@
 <p>The CBR assessment is achieved through a function already available in IEEE Std. 802.11-2012 [i.4], and the access layer technology ITS-G5 [1] is relying on IEEE Std. 802.11-2012. The CBR assessment is based on the physical carrier sense (CS) part called clear channel assessment (CCA), see Clause 18.3.6 in [4]. The CCA shall be the source for assessing if the channel is busy or not. The CCA is using a service primitive called PHY_CCA.indication for conveying the status of the wireless channel to the MAC layer.</p>
 <p>The local perceived CBR,<em> CBR_L_0_Hop</em>, shall be calculated according to <a href="#eq-1">Eq. 1</a></p>
 <div id="eq-1" class="equation"><em>CBR_L_0_Hop</em> = <em>T_CCA_BUSY</em> / <em>T_CBR</em></div>
-<p>Where <em>T_CCA_BUSY</em> is the time the channel was <span class="ctr ctr-2 removed">busy</span><span class="ctr ctr-2 added">occupied</span> according to the PHY_CCA<span class="ctr ctr-2 removed">.</span><span class="ctr ctr-2 added"> </span>indication during the <em>T_CBR</em>.</p>
+<p>Where <em>T_CCA_BUSY</em> is the time the channel was <span class="ctr-2 removed">busy</span><span class="ctr-2 added">occupied</span> according to the PHY_CCA<span class="ctr-2 removed">.</span><span class="ctr-2 added"> </span>indication during the <em>T_CBR</em>.</p>
 </section>
 <section>
 <h2 id="hdr-79kzbxiwfmc7x">Algorithm</h2>
@@ -313,7 +313,7 @@
 </tbody>
 </table>
 </section>
-<section class="appendix informative ctr ctr-7 removed">
+<section class="appendix informative ctr-7 removed">
 <h1 id="hdr-0e2t2awkzltgg">Annex XY (informative):<br /> Bibliography</h1>
 <p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Publication&gt;: "&lt;Title&gt;".</p>
 <p>OR</p>

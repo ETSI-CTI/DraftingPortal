@@ -4,16 +4,16 @@ class ContributionService
 
   CONTRIBUTIONS = begin
     [
-      {
-        change_request_id: 1,
-        status: :drafting,
-        author: "John Smith",
-        name: "Review of abbreviations",
-        date: Date.new(2016, 11, 16),
-        up_votes: 31,
-        down_votes: 0,
-        comment: "Abbreviations changed"
-      },
+      #{
+      #  change_request_id: 1,
+      #  status: :drafting,
+      #  author: "John Smith",
+      #  name: "Review of abbreviations",
+      #  date: Date.new(2016, 11, 16),
+      #  up_votes: 31,
+      #  down_votes: 0,
+      #  comment: "Abbreviations changed"
+      #},
       {
         change_request_id: 2,
         status: :contributed,
@@ -34,16 +34,16 @@ class ContributionService
         down_votes: 18,
         comment: "Windows 10 compatibility"
       },
-      {
-        change_request_id: 4,
-        status: :implemented,
-        author: "EditHelp",
-        name: "Section 10.2 revised",
-        date: Date.new(2016, 4, 10),
-        up_votes: 17,
-        down_votes: 2,
-        comment: "EditHelp Pre-processing"
-      },
+      #{
+      #  change_request_id: 4,
+      #  status: :implemented,
+      #  author: "EditHelp",
+      #  name: "Section 10.2 revised",
+      #  date: Date.new(2016, 4, 10),
+      #  up_votes: 17,
+      #  down_votes: 2,
+      #  comment: "EditHelp Pre-processing"
+      #},
       {
         change_request_id: 5,
         status: :not_accepted,
@@ -54,16 +54,16 @@ class ContributionService
         down_votes: 12,
         comment: "Add something to the spec"
       },
-      {
-        change_request_id: 6,
-        status: :drafting,
-        author: "Bill Gates",
-        name: "Clause moved",
-        date: Date.new(2016, 6, 10),
-        up_votes: 7,
-        down_votes: 7,
-        comment: "Remove Google support everywhere"
-      },
+      #{
+      #  change_request_id: 6,
+      #  status: :drafting,
+      #  author: "Bill Gates",
+      #  name: "Clause moved",
+      #  date: Date.new(2016, 6, 10),
+      #  up_votes: 7,
+      #  down_votes: 7,
+      #  comment: "Remove Google support everywhere"
+      #},
       {
         change_request_id: 7,
         status: :contributed,
@@ -80,10 +80,11 @@ class ContributionService
   def contributions_for(change_request_id)
     num_id = change_request_id.to_i
     partitioned = CONTRIBUTIONS.partition { |c| c.change_request_id == num_id }
+    selected = partitioned.first.first
     presenter = Contributions::Show
 
     ContributionResult.new(
-      presenter.new(partitioned.first.first),
+      selected ? presenter.new(selected) : nil,
       partitioned.last.map { |c| presenter.new(c) }
     )
   end

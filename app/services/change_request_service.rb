@@ -38,7 +38,7 @@ class ChangeRequestService
         comment: "English wording",
         updated_at: Date.new(2016, 11, 6),
         contributed_at: Date.new(2016, 11, 6),
-        issues: [1, 2, 5, 6]
+        issues: [1, 2]
       },
       {
         id: 3,

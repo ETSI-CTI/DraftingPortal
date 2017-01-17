@@ -8,8 +8,12 @@ function handleToggle(evt) {
 function toggleContributionsFor($input) {
   const changeRequestId = $input.closest('.contribution').data('change-request-id');
   const checked = $input.prop('checked');
-  $('iframe').contents().find(`.ctr.ctr-${changeRequestId}`).each((_, contribution) => {
-    $(contribution).css('display', checked ? 'block' : 'none');
+  $('iframe').contents().find(`.ctr-${changeRequestId}`).each((_, contribution) => {
+    if (checked) {
+      $(contribution).addClass('ctr');
+    } else {
+      $(contribution).removeClass('ctr');
+    }
   });
 }
 

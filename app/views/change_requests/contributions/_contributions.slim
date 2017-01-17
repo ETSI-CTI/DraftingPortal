@@ -4,8 +4,11 @@ header
 .list
   .selected
     h3 Selected contribution
-    = render partial: "change_requests/contributions/contribution",
-      locals: { contribution: contributions.selected, selected: true }
+    - if contributions.selected
+      = render partial: "change_requests/contributions/contribution",
+        locals: { contribution: contributions.selected, selected: true }
+    - else
+      = render partial: "/change_requests/contributions/empty_selected"
   .rest
     h3 Other contributions
     ul
