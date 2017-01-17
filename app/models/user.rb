@@ -11,4 +11,8 @@ class User
     "#{first_name} #{last_name}"
   end
 
+  def tb_official?
+    id == :tb_official
+  end
+
 end

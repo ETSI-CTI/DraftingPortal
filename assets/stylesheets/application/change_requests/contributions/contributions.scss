@@ -52,8 +52,25 @@
       }
     }
 
-    &.active .votes .fa {
-      cursor: pointer;
+
+    &.drafting, &.contributed {
+      .votes .fa {
+        cursor: pointer;
+      }
+
+      .actions {
+        text-align: center;
+        .btn {
+          width: 10em;
+          margin: 1em 1em 0 1em;
+        }
+      }
+    }
+
+    &.accepted, &.not-accepted, &.implemented {
+      .actions {
+        display: none;
+      }
     }
   }
 
@@ -101,6 +118,8 @@
       color: lighten($text-color, 10%);
     }
   }
+
+  
 
 }
 

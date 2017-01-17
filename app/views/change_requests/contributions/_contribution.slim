@@ -22,4 +22,7 @@ li.contribution[
       .down-votes
         span= contribution.down_votes
         i.fa.fa-thumbs-down
+  - if current_user.tb_official?
+    .row
+      = render partial: "/change_requests/contributions/actions"
 
