@@ -14,6 +14,7 @@ class ChangeRequest
     comment
     updated_at
     contributed_at
+    issues
   }
 
   module Status

@@ -7,6 +7,7 @@ class ChangeRequestService
 
   CHANGE_REQUESTS = begin
     user_service = UserService.new
+    issue_service = IssueService.new
     john_smith = user_service.find(:john_smith)
     bill_gates = user_service.find(:bill_gates)
     larry_page = user_service.find(:larry_page)
@@ -23,7 +24,8 @@ class ChangeRequestService
         last_edited_by: john_smith,
         comment: "Abbreviations changed",
         updated_at: Date.new(2016, 11, 16),
-        contributed_at: nil
+        contributed_at: nil,
+        issues: [4]
       },
       {
         id: 2,
@@ -35,7 +37,8 @@ class ChangeRequestService
         last_edited_by: john_smith,
         comment: "English wording",
         updated_at: Date.new(2016, 11, 6),
-        contributed_at: Date.new(2016, 11, 6)
+        contributed_at: Date.new(2016, 11, 6),
+        issues: [1, 2, 5, 6]
       },
       {
         id: 3,
@@ -47,7 +50,8 @@ class ChangeRequestService
         last_edited_by: bill_gates,
         comment: "Windows 10 compatibility",
         updated_at: Date.new(2015, 10, 1),
-        contributed_at: Date.new(2015, 11, 6)
+        contributed_at: Date.new(2015, 11, 6),
+        issues: []
       },
       {
         id: 4,
@@ -59,7 +63,8 @@ class ChangeRequestService
         last_edited_by: bill_gates,
         comment: "Pre-Processing",
         updated_at: Date.new(2016, 3, 1),
-        contributed_at: Date.new(2016, 5, 10)
+        contributed_at: Date.new(2016, 5, 10),
+        issues: []
       },
       {
         id: 5,
@@ -71,7 +76,8 @@ class ChangeRequestService
         last_edited_by: john_smith,
         comment: "Add something to the spec",
         updated_at: Date.new(2016, 4, 10),
-        contributed_at: Date.new(2016, 4, 10)
+        contributed_at: Date.new(2016, 4, 10),
+        issues: []
       },
       {
         id: 6,
@@ -83,7 +89,8 @@ class ChangeRequestService
         last_edited_by: bill_gates,
         comment: "Remove Google support everywhere",
         updated_at: Date.new(2016, 6, 10),
-        contributed_at: nil
+        contributed_at: nil,
+        issues: []
       },
       {
         id: 7,
@@ -94,7 +101,8 @@ class ChangeRequestService
         status: :contributed,
         comment: "Add Google support",
         updated_at: Date.new(2016, 5, 10),
-        contributed_at: Date.new(2016, 5, 10)
+        contributed_at: Date.new(2016, 5, 10),
+        issues: [3, 7]
       }
     ].map { |attrs| ChangeRequest.new(attrs) }
   end
@@ -158,7 +166,7 @@ class ChangeRequestService
     definition = CHANGE_REQUESTS_BY_USER[user.id]
     definition[:ids].map do |id|
       ChangeRequests::Show.new(
-        change_request: CHANGE_REQUESTS[id - 1],
+        change_request: change_request_for(id),
         owner: owner,
         permissions: Set.new(definition[:permissions][id])
       )
@@ -172,13 +180,28 @@ class ChangeRequestService
   def find_by_id(id)
     ChangeRequests::Show.new(
       owner: UserService.new.find(:larry_page),
-      change_request: CHANGE_REQUESTS[id - 1],
+      change_request: change_request_for(id),
       permissions: Set.new()
     )
   end
 
   def contributions_for(change_request_id)
     @contribution_service.contributions_for(change_request_id)
+  end
+
+  private
+
+  def change_requests
+    CHANGE_REQUESTS
+  end
+
+  def change_request_for(id)
+    change_requests[id - 1].tap do |cr|
+      def cr.issues
+        issue_service = IssueService.new
+        @issues.map { |id| issue_service.find_by_id(id) }
+      end
+    end
   end
 
 end
