@@ -51,13 +51,13 @@
         width: "100%",
         height: iframeHeight - 130,
 	plugins: [
-	     "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
-	     "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-	     "localfile table contextmenu directionality emoticons template paste textcolor sidepanel navpanel typograf",
-	     "tabulator respec"
+          "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+          "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+	  "localfile table contextmenu directionality emoticons template paste textcolor sidepanel respec",
+	  "inlines abbreviations references navpanel typograf tabulator"
         ],
-        toolbar: "insertfile undo redo | styleselect | bold italic forecolor backcolor | " +
-          "alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | " +
+	toolbar: "insertfile undo redo | styleselect abbreviation | bold italic forecolor backcolor | " +
+	  "alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | " +
 	  "abbr link image | print preview fullpage docproperties",
         style_formats: [
 	  {title: 'Header 1', block: 'h1'},
@@ -71,7 +71,11 @@
         ],
         file_browser_callback : 'myFileBrowser',
         navpanel_show_on_start: true,
-        image_advtab: true
+	abbrpanel_show_on_start: true,
+	image_advtab: true,
+	setup: function(editor) {
+	  editor.settings.respecScript = '/assets/javascripts/respec-etsi-debug.js';
+	}
       });
 
 
