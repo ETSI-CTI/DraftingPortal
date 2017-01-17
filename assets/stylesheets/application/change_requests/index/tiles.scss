@@ -1,4 +1,22 @@
 .tile {
   @import "more-actions";
+
+  .issues {
+    ul {
+      padding-left: 2em;
+    }
+
+    .issue {
+      padding: 1em;
+
+      .id {
+        font-weight: bold;
+      }
+
+      .summary {
+        padding-left: 5px;
+      }
+    }
+  }
 }
 
