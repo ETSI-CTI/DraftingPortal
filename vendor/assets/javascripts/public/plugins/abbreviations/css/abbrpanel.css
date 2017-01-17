@@ -1,0 +1,31 @@
+.mce-abbr-panel {
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+.mce-abbr-panel ul {
+}
+
+.mce-abbr-panel li {
+  list-style-type: none;
+  cursor: pointer;
+}
+.mce-abbr-panel li.current {
+  background:lightgrey;
+}
+
+.mce-content-body abbr {
+  font-style: italic;
+}
+
+.mce-abbr-panel abbr{
+  margin-right:10px;
+  font-style: italic;
+  font-weight: bold;
+  display:inline-block;
+  overflow-x:hidden;
+}
+
+abbr.selected {
+  background-color:yellow;
+}
