@@ -1,0 +1,4 @@
+li
+  .issue.js-issue class=(issue_counter % 2 == 1 ? "odd" : "even")
+    .identifier ##{issue.ticket_id} - #{issue.specification}
+    .summary = issue.summary

@@ -1,0 +1,16 @@
+.modal.fade.in tabindex="-1" class=(modal_class if defined?(modal_class))
+  .modal-dialog
+    .modal-content
+
+      .modal-header
+        button.close type="button" data-dismiss="modal"
+          i.fa.fa-close
+        .modal-title
+          h4= title
+
+      .modal-body
+        = render partial: body, locals: (body_locals if defined?(body_locals))
+
+      .modal-footer
+        - if defined?(footer)
+          = render partial: footer, locals: (footer_locals if defined?(footer_locals))

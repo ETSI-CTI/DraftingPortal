@@ -1,22 +1,23 @@
+body.modal-open {
+
+  .navbar, .sidebar, .main.container, .footer {
+    @include filter(grayscale(100%));
+  }
+
+  .main.container > *,
+  .sidebar > * {
+    @include filter(blur(2px));
+  }
+
+}
+
 .wait-mask {
   $spin-speed: .8s;
   $spin-steps: 12;
   $spinner-size: 32px;
   $spinner-margin: -$spinner-size / 2;
 
-  display: none;
-
-  @include size(100% 100%);
-  position: fixed;
-  top: 0;
-  left: 0;
-  text-align: center;
-  z-index: 1000;
-  background: rgba(#000, .3);
-
-  &.active {
-    display: block;
-  }
+  @extend .glass-pane;
 
   .spinner {
     @include size($spinner-size);

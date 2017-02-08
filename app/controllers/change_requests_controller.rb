@@ -7,6 +7,7 @@ class ChangeRequestsController < ApplicationController
   respond_to :html, only: %i{ index contributions }
 
   def index
+    @issues = IssueService.new.all
     @change_requests = @service.find_by_user(current_user)
     respond_with(@change_requests)
   end

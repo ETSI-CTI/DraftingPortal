@@ -1,0 +1,22 @@
+section.create-contribution
+  form
+
+    .form-content
+      .form-group
+        label.form-label Choose tracking issue
+        ol.issues
+          = render partial: "/change_requests/index/modals/contribute/issue",
+            collection: issues
+
+      .comment.form-group
+        label.form-label Add a comment
+        textarea.form-control rows="5" placeholder="optional"
+
+      .reason.form-group
+        label.form-label Reason
+        select.select-control.form-control
+          option For review
+          option For merge
+
+    .form-actions
+      = render partial: "/change_requests/index/modals/contribute/form_actions"

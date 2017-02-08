@@ -1,6 +1,7 @@
 .change_requests.index {
   @import "index/legend";
   @import "index/change-requests";
+  @import "index/modal-contribute";
 
   .workspace > header {
     .input-group {

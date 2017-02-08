@@ -20,7 +20,10 @@ html
     footer.footer
       = render "layouts/shared/footer"
 
+    .glass-pane
     = render "layouts/shared/wait_mask"
+
+    = yield :modals
 
     = javascript_include_tag 'application'
     = yield :scripts

@@ -1,0 +1,47 @@
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.modal-content {
+  @include crisp-edges;
+  border: 1px solid $modal-header-bg;
+}
+
+.modal-header {
+  background: $modal-header-bg;
+  &, .close {
+    color: $modal-header-color;
+    opacity: 1;
+  }
+}
+
+.modal-body {
+  background: $modal-body-bg;
+}
+
+.modal-footer {
+  background: $modal-footer-bg;
+  text-align: center;
+  button, a {
+    margin: 0 1em;
+  }
+
+  a {
+    color: $porcelain;
+  }
+}

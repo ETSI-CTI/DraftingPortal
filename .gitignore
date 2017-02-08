@@ -20,6 +20,7 @@
 
 capybara-*.html
 .rspec
+npm-debug.log
 /public/system
 /coverage/
 /spec/tmp

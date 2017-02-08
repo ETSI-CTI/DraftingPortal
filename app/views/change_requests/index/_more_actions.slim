@@ -29,12 +29,12 @@
   ul
     - if change_request.contributable?
       li
-        a.contribute href="#"
+        a.contribute.js-contribute href="#"
           span Contribute
           i.fa.fa-send
     - if change_request.recontributable?
       li
-        a.recontribute href="#"
+        a.recontribute.js-contribute href="#"
           span Recontribute
           i.fa.fa-send
     - if change_request.applicable?

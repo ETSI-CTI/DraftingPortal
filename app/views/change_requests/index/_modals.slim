@@ -1,0 +1,5 @@
+= render partial: "/shared/modal",
+  locals: { title: "Create Contribution",
+    modal_class: "modal-contribute js-modal-contribute",
+    body: "/change_requests/index/modals/contribute/body",
+    body_locals: { issues: @issues } }

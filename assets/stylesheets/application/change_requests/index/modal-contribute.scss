@@ -1,0 +1,54 @@
+.create-contribution {
+
+  .form-content {
+    padding: 1em;
+  }
+
+  .issues {
+    background: white;
+  }
+
+  .issue {
+    padding: 1em;
+    cursor: pointer;
+
+    &.odd {
+      background: lighten($brand-info, 50%);
+    }
+
+    &.selected {
+      background: $brand-primary;
+      color: white;
+
+      &:hover {
+        background: lighten($brand-primary, 10%);
+        color: inherit;
+      }
+    }
+
+    &:hover {
+      background: darken(white, 10%);
+    }
+  }
+}
+
+.modal.modal-contribute {
+  .modal-body { padding: 0; }
+
+  .form-actions {
+    padding: 2em;
+
+    background: $modal-footer-bg;
+    text-align: center;
+
+    button, a {
+      margin: 0 1em;
+    }
+
+    a {
+      color: $porcelain;
+    }
+  }
+
+  .modal-footer { display: none; }
+}
