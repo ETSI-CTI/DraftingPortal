@@ -1,4 +1,4 @@
-# rails5-gulp
+# cti-nwm-portal
 
 A Rails 5 application that integrates a gulp-based
 asset pipeline by including the final assets in Rails'
@@ -35,6 +35,13 @@ to run the actual Rails app, while the other runs
 ```bash
 gulp
 ```
+
+or, alternatively
+
+```bash
+npm run dev
+```
+
 to support a BrowserSync session that live reloads
 whenever a SCSS, JS or Slim template is changed.
 
@@ -43,7 +50,7 @@ whenever a SCSS, JS or Slim template is changed.
 Run
 
 ```bash
-npm dist
+npm run dist
 ```
 
 to compile assets and place them in the `public` folder.
